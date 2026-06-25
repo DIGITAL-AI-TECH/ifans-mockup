@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ferramentas — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="creator-page">
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="creator-dashboard.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+      </a>
+      <span class="header-title">Ferramentas</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <nav class="creator-top-nav" role="navigation">
+    <a href="creator-dashboard.html" class="creator-top-nav-item"><img src="icons/bar-chart.svg" alt="" aria-hidden="true"> Dashboard</a>
+    <a href="creator-new-post.html" class="creator-top-nav-item"><img src="icons/camera.svg" alt="" aria-hidden="true"> Novo Post</a>
+    <a href="creator-analytics.html" class="creator-top-nav-item"><img src="icons/bar-chart.svg" alt="" aria-hidden="true"> Analytics</a>
+    <a href="creator-subscribers.html" class="creator-top-nav-item"><img src="icons/crown.svg" alt="" aria-hidden="true"> Assinantes</a>
+    <a href="creator-tools.html" class="creator-top-nav-item ativo"><img src="icons/settings.svg" alt="" aria-hidden="true"> Ferramentas</a>
+    <a href="creator-wallet.html" class="creator-top-nav-item"><img src="icons/coins.svg" alt="" aria-hidden="true"> Carteira</a>
+    <a href="creator-schedule.html" class="creator-top-nav-item"><img src="icons/calendar.svg" alt="" aria-hidden="true"> Agenda</a>
+    <a href="creator-broadcast.html" class="creator-top-nav-item"><img src="icons/send.svg" alt="" aria-hidden="true"> Broadcast</a>
+  </nav>
+
+  <main class="creator-page-content">
+
+    <!-- SECAO: Crescimento -->
+    <div class="settings-section-title">Crescimento</div>
+
+    <div class="panel" style="overflow:hidden">
+
+      <!-- Link de indicação -->
+      <div class="settings-item" style="border-bottom:1px solid var(--color-border-subtle)">
+        <div class="settings-item-icon" style="background:#442AC0">
+          <img src="icons/share.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">Link de indicação</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">ifans.click/ref/ana_art</div>
+        </div>
+        <button style="min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;padding:0 8px;background:var(--color-brand-primary);border-radius:8px;font-size:12px;font-weight:600;color:#fff">
+          Copiar
+        </button>
+      </div>
+
+      <!-- Estatísticas de indicados -->
+      <div class="settings-item">
+        <div class="settings-item-icon" style="background:#6B4FEB">
+          <img src="icons/user.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">Indicados</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">14 cadastros via seu link</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:4px;color:var(--color-text-tertiary)">
+          <span style="font-size:14px;font-weight:700;color:#10B981">14</span>
+          <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px;opacity:0.4">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SECAO: Conteúdo -->
+    <div class="settings-section-title">Conteúdo</div>
+
+    <div class="panel" style="overflow:hidden">
+
+      <!-- Marca d'água -->
+      <div class="settings-item" style="border-bottom:1px solid var(--color-border-subtle)">
+        <div class="settings-item-icon" style="background:#FD296C">
+          <img src="icons/lock.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">Marca d'água automática</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">Protege suas fotos e vídeos</div>
+        </div>
+        <div class="settings-toggle on" role="switch" aria-checked="true" aria-label="Marca d'água automática"></div>
+      </div>
+
+      <!-- SEO do perfil -->
+      <div class="settings-item" style="border-bottom:1px solid var(--color-border-subtle)">
+        <div class="settings-item-icon" style="background:#10B981">
+          <img src="icons/search.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">SEO do perfil</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">Palavras-chave para ser encontrada</div>
+        </div>
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" class="settings-item-arrow" style="width:16px;height:16px;opacity:0.4">
+      </div>
+
+      <!-- Legendas automáticas -->
+      <div class="settings-item">
+        <div class="settings-item-icon" style="background:#F59E0B">
+          <img src="icons/zap.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">Legendas automáticas</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">IA gera legendas para seus posts</div>
+        </div>
+        <div class="settings-toggle on" role="switch" aria-checked="true" aria-label="Legendas automáticas"></div>
+      </div>
+
+    </div>
+
+    <!-- SECAO: Monetização -->
+    <div class="settings-section-title">Monetização</div>
+
+    <div class="panel" style="overflow:hidden">
+
+      <!-- Preço do plano -->
+      <div class="settings-item" style="border-bottom:1px solid var(--color-border-subtle)">
+        <div class="settings-item-icon" style="background:#442AC0">
+          <img src="icons/coins.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">Preço da assinatura</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">R$ 29,90 / mês</div>
+        </div>
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px;opacity:0.4">
+      </div>
+
+      <!-- Desconto por tempo limitado -->
+      <div class="settings-item" style="border-bottom:1px solid var(--color-border-subtle)">
+        <div class="settings-item-icon" style="background:#FD296C">
+          <img src="icons/zap.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">Desconto por tempo limitado</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">Ativar oferta relâmpago</div>
+        </div>
+        <div class="settings-toggle" role="switch" aria-checked="false" aria-label="Desconto por tempo limitado"></div>
+      </div>
+
+      <!-- Bundle de conteúdo -->
+      <div class="settings-item" style="border-bottom:1px solid var(--color-border-subtle)">
+        <div class="settings-item-icon" style="background:#F59E0B">
+          <img src="icons/gift.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">Bundle de conteúdo</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">Pacote de posts com desconto</div>
+        </div>
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px;opacity:0.4">
+      </div>
+
+      <!-- Campanhas -->
+      <div class="settings-item">
+        <div class="settings-item-icon" style="background:#10B981">
+          <img src="icons/bar-chart.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">Campanhas promocionais</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">1 campanha ativa</div>
+        </div>
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px;opacity:0.4">
+      </div>
+
+    </div>
+
+    <!-- SECAO: Comunicação -->
+    <div class="settings-section-title">Comunicação</div>
+
+    <div class="panel" style="margin-bottom:32px;overflow:hidden">
+
+      <div class="settings-item" style="border-bottom:1px solid var(--color-border-subtle)">
+        <div class="settings-item-icon" style="background:#6B4FEB">
+          <img src="icons/send.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">Broadcast</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">Mensagem para todos os assinantes</div>
+        </div>
+        <a href="creator-broadcast.html" style="display:flex;align-items:center;min-height:44px;padding:0 4px">
+          <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px;opacity:0.4">
+        </a>
+      </div>
+
+      <div class="settings-item">
+        <div class="settings-item-icon" style="background:#442AC0">
+          <img src="icons/bell.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div class="settings-item-label" style="font-weight:600">Notificações push</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">Avisar fãs sobre novos posts</div>
+        </div>
+        <div class="settings-toggle on" role="switch" aria-checked="true" aria-label="Notificações push"></div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>

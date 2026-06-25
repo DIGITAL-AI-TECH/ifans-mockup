@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Feed — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER 44px -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="feed.html" class="header-brand">
+        <img src="logos/symbol-only.svg" alt="ifans" class="header-logo">
+      </a>
+      <div class="header-actions">
+        <button class="header-action-btn" aria-label="Notificacoes">
+          <span class="badge">3</span>
+          <img src="icons/bell.svg" alt="" aria-hidden="true">
+        </button>
+        <button class="header-action-btn" aria-label="Mensagens">
+          <img src="icons/message.svg" alt="" aria-hidden="true">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="page-content">
+
+    <!-- STORIES STRIP -->
+    <div class="stories-strip">
+
+      <!-- Story "Adicionar" do usuario -->
+      <div class="story-item story-add">
+        <div class="story-add-ring">
+          <div class="avatar-initials avatar-lg" style="font-size:20px">M</div>
+          <div class="story-add-plus">
+            <img src="icons/plus.svg" alt="" aria-hidden="true" style="width:10px;height:10px;filter:brightness(0) invert(1)">
+          </div>
+        </div>
+        <span class="story-label">Voce</span>
+      </div>
+
+      <!-- Story 1 -->
+      <div class="story-item">
+        <div class="story-ring">
+          <div class="story-ring-inner">
+            <div class="story-avatar-initials">A</div>
+          </div>
+        </div>
+        <span class="story-label">Ana Lima</span>
+      </div>
+
+      <!-- Story 2 -->
+      <div class="story-item">
+        <div class="story-ring">
+          <div class="story-ring-inner">
+            <div class="story-avatar-initials" style="background:#FD296C">C</div>
+          </div>
+        </div>
+        <span class="story-label">Carol M.</span>
+      </div>
+
+      <!-- Story 3 -->
+      <div class="story-item">
+        <div class="story-ring">
+          <div class="story-ring-inner">
+            <div class="story-avatar-initials" style="background:#3422A0">R</div>
+          </div>
+        </div>
+        <span class="story-label">Rafa</span>
+      </div>
+
+      <!-- Story 4 — ja visto -->
+      <div class="story-item">
+        <div class="story-ring seen">
+          <div class="story-ring-inner">
+            <div class="story-avatar-initials" style="background:#5E54B8">J</div>
+          </div>
+        </div>
+        <span class="story-label">Julia</span>
+      </div>
+
+      <!-- Story 5 -->
+      <div class="story-item">
+        <div class="story-ring">
+          <div class="story-ring-inner">
+            <div class="story-avatar-initials" style="background:#E01256">B</div>
+          </div>
+        </div>
+        <span class="story-label">Bia Santos</span>
+      </div>
+
+      <!-- Story 6 — ja visto -->
+      <div class="story-item">
+        <div class="story-ring seen">
+          <div class="story-ring-inner">
+            <div class="story-avatar-initials" style="background:#47409A">L</div>
+          </div>
+        </div>
+        <span class="story-label">Lara</span>
+      </div>
+
+      <!-- Story 7 -->
+      <div class="story-item">
+        <div class="story-ring">
+          <div class="story-ring-inner">
+            <div class="story-avatar-initials" style="background:#6B4FEB">K</div>
+          </div>
+        </div>
+        <span class="story-label">Kris</span>
+      </div>
+
+    </div>
+    <!-- /stories-strip -->
+
+    <!-- FEED VERTICAL (post-cards dos seguidos) -->
+    <div class="feed-post-list" id="feedPostList">
+
+      <!-- POST 1: Creator com ring-creator, post normal -->
+      <article class="post-card">
+        <div class="post-card-header">
+          <div class="avatar-initials avatar-md ring-creator" style="font-size:16px">A</div>
+          <div class="post-card-creator-info">
+            <div class="post-card-creator-name">
+              Ana Lima
+              <span class="post-card-tier-badge" style="background:#FD296C">Creator</span>
+            </div>
+            <div class="post-card-time">ha 2h</div>
+          </div>
+          <button class="post-card-menu-btn" aria-label="Opcoes">
+            <img src="icons/ellipsis-h.svg" alt="" aria-hidden="true">
+          </button>
+        </div>
+        <div class="post-card-media">
+          <div class="post-card-media-bg" style="background:linear-gradient(135deg,#442AC0,#1B1158)"></div>
+        </div>
+        <div class="post-card-actions">
+          <button class="post-card-action-btn liked" aria-label="Curtir">
+            <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:invert(20%) sepia(100%) saturate(3000%) hue-rotate(320deg) brightness(100%)">
+            <span>1.2k</span>
+          </button>
+          <button class="post-card-action-btn" aria-label="Comentar">
+            <img src="icons/message.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+            <span>48</span>
+          </button>
+          <button class="post-card-action-btn" aria-label="Gorjeta">
+            <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+            <span>Gorjeta</span>
+          </button>
+          <span class="post-card-action-spacer"></span>
+          <button class="post-card-action-btn" aria-label="Compartilhar">
+            <img src="icons/share.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+          </button>
+        </div>
+        <div class="post-card-footer">
+          <div class="post-card-likes">1.248 curtidas</div>
+          <p class="post-card-caption"><strong>Ana Lima</strong> Novo ensaio disponivel para assinantes</p>
+          <div class="post-card-comments">Ver todos os 48 comentarios</div>
+        </div>
+      </article>
+
+      <!-- POST 2: PPV (conteudo bloqueado com cadeado + preco) -->
+      <article class="post-card">
+        <div class="post-card-header">
+          <div class="avatar-initials avatar-md ring-premium" style="font-size:16px;background:#3422A0">B</div>
+          <div class="post-card-creator-info">
+            <div class="post-card-creator-name">
+              Bia Santos
+              <span class="post-card-tier-badge">Premium</span>
+            </div>
+            <div class="post-card-time">ha 5h</div>
+          </div>
+          <button class="post-card-menu-btn" aria-label="Opcoes">
+            <img src="icons/ellipsis-h.svg" alt="" aria-hidden="true">
+          </button>
+        </div>
+        <div class="post-card-media">
+          <div class="post-card-media-bg" style="background:linear-gradient(135deg,#1B1158,#0D0B1E)"></div>
+          <div class="post-card-ppv">
+            <div class="post-card-ppv-icon">
+              <img src="icons/lock.svg" alt="" aria-hidden="true" style="width:36px;height:36px;filter:brightness(0) invert(1)">
+            </div>
+            <button class="post-card-ppv-price">
+              <img src="icons/coins.svg" alt="" aria-hidden="true" style="width:16px;height:16px;filter:brightness(0) invert(1)">
+              50 creditos para desbloquear
+            </button>
+          </div>
+        </div>
+        <div class="post-card-actions">
+          <button class="post-card-action-btn" aria-label="Curtir">
+            <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+            <span>342</span>
+          </button>
+          <button class="post-card-action-btn" aria-label="Comentar">
+            <img src="icons/message.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+            <span>19</span>
+          </button>
+          <button class="post-card-action-btn" aria-label="Gorjeta">
+            <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+            <span>Gorjeta</span>
+          </button>
+          <span class="post-card-action-spacer"></span>
+          <button class="post-card-action-btn" aria-label="Compartilhar">
+            <img src="icons/share.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+          </button>
+        </div>
+        <div class="post-card-footer">
+          <div class="post-card-likes">342 curtidas</div>
+          <p class="post-card-caption"><strong>Bia Santos</strong> Conteudo exclusivo — desbloqueie para ver</p>
+          <div class="post-card-comments">Ver todos os 19 comentarios</div>
+        </div>
+      </article>
+
+      <!-- POST 3: Video com icone play centralizado -->
+      <article class="post-card">
+        <div class="post-card-header">
+          <div class="avatar-initials avatar-md" style="font-size:16px;background:#FD296C">C</div>
+          <div class="post-card-creator-info">
+            <div class="post-card-creator-name">
+              Carol M.
+              <span class="post-card-tier-badge" style="background:#FD296C">Creator</span>
+            </div>
+            <div class="post-card-time">ha 8h</div>
+          </div>
+          <button class="post-card-menu-btn" aria-label="Opcoes">
+            <img src="icons/ellipsis-h.svg" alt="" aria-hidden="true">
+          </button>
+        </div>
+        <div class="post-card-media">
+          <div class="post-card-media-bg" style="background:linear-gradient(135deg,#3422A0,#281A80)"></div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+            <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,0.50);display:flex;align-items:center;justify-content:center">
+              <img src="icons/play.svg" alt="" aria-hidden="true" style="width:28px;height:28px;filter:brightness(0) invert(1);margin-left:3px">
+            </div>
+          </div>
+          <div style="position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,0.65);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;color:#fff">2:34</div>
+        </div>
+        <div class="post-card-actions">
+          <button class="post-card-action-btn" aria-label="Curtir">
+            <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+            <span>876</span>
+          </button>
+          <button class="post-card-action-btn" aria-label="Comentar">
+            <img src="icons/message.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+            <span>63</span>
+          </button>
+          <button class="post-card-action-btn" aria-label="Gorjeta">
+            <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+            <span>Gorjeta</span>
+          </button>
+          <span class="post-card-action-spacer"></span>
+          <button class="post-card-action-btn" aria-label="Compartilhar">
+            <img src="icons/share.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+          </button>
+        </div>
+        <div class="post-card-footer">
+          <div class="post-card-likes">876 curtidas</div>
+          <p class="post-card-caption"><strong>Carol M.</strong> Bastidores do shooting de hoje — ficou incrivel</p>
+          <div class="post-card-comments">Ver todos os 63 comentarios</div>
+        </div>
+      </article>
+
+      <!-- POST 4: Enquete inline -->
+      <article class="post-card">
+        <div class="post-card-header">
+          <div class="avatar-initials avatar-md ring-vip" style="font-size:16px;background:#5E54B8">R</div>
+          <div class="post-card-creator-info">
+            <div class="post-card-creator-name">
+              Rafa Alves
+              <span class="post-card-tier-badge" style="background:#F59E0B">VIP</span>
+            </div>
+            <div class="post-card-time">ha 12h</div>
+          </div>
+          <button class="post-card-menu-btn" aria-label="Opcoes">
+            <img src="icons/ellipsis-h.svg" alt="" aria-hidden="true">
+          </button>
+        </div>
+        <div class="post-card-media" style="aspect-ratio:4/5;position:relative">
+          <div class="post-card-media-bg" style="background:linear-gradient(160deg,#442AC0,#1B1158)"></div>
+          <div style="position:absolute;bottom:16px;left:16px;right:16px">
+            <p style="color:#fff;font-size:14px;font-weight:700;margin-bottom:8px">O que voce prefere?</p>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <button style="padding:10px 14px;background:rgba(255,255,255,0.20);border:1.5px solid rgba(255,255,255,0.40);border-radius:50px;color:#fff;font-size:13px;font-weight:600;text-align:left;cursor:pointer;min-height:44px">Opcao A — Ensaio na praia</button>
+              <button style="padding:10px 14px;background:rgba(255,255,255,0.20);border:1.5px solid rgba(255,255,255,0.40);border-radius:50px;color:#fff;font-size:13px;font-weight:600;text-align:left;cursor:pointer;min-height:44px">Opcao B — Estudio</button>
+            </div>
+            <p style="color:rgba(255,255,255,0.50);font-size:11px;margin-top:8px">1.430 votos — encerra em 23h</p>
+          </div>
+        </div>
+        <div class="post-card-actions">
+          <button class="post-card-action-btn liked" aria-label="Curtir">
+            <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:invert(20%) sepia(100%) saturate(3000%) hue-rotate(320deg) brightness(100%)">
+            <span>2.1k</span>
+          </button>
+          <button class="post-card-action-btn" aria-label="Comentar">
+            <img src="icons/message.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+            <span>127</span>
+          </button>
+          <button class="post-card-action-btn" aria-label="Gorjeta">
+            <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+            <span>Gorjeta</span>
+          </button>
+          <span class="post-card-action-spacer"></span>
+          <button class="post-card-action-btn" aria-label="Compartilhar">
+            <img src="icons/share.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.55">
+          </button>
+        </div>
+        <div class="post-card-footer">
+          <div class="post-card-likes">2.104 curtidas</div>
+          <p class="post-card-caption"><strong>Rafa Alves</strong> Qual tema voces querem pro proximo ensaio?</p>
+          <div class="post-card-comments">Ver todos os 127 comentarios</div>
+        </div>
+      </article>
+
+      <!-- Sentinel para infinite scroll -->
+      <div class="feed-sentinel" id="feedSentinel" aria-hidden="true" style="height:1px"></div>
+    </div>
+    <!-- /feed-post-list -->
+  </main>
+  <!-- /page-content -->
+
+  <!-- BOTTOM NAV: 4 tabs sem label + botao central "+" -->
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab ativo" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>

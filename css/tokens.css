@@ -1,0 +1,376 @@
+/**
+ * ifans.click — Design Tokens CSS
+ * Version: 1.0.0 | Generated: 2026-06-21
+ * Palette: Velvet #442AC0 · Desire #FD296C · Obsidiana #0D0B1E · Branco #FFFFFF
+ * Arquétipo: AMANTE (dom.) + FORA DA LEI (sec.)
+ */
+
+/* ─────────────────────────────────────────────
+   LAYER 0: Primitives (raw scale)
+   ───────────────────────────────────────────── */
+:root {
+  /* Velvet scale */
+  --primitive-velvet-50:  #F3F0FF;
+  --primitive-velvet-100: #E8E2FF;
+  --primitive-velvet-200: #D1C5FE;
+  --primitive-velvet-300: #B09EFD;
+  --primitive-velvet-400: #8B73F5;
+  --primitive-velvet-500: #6B4FEB;
+  --primitive-velvet-600: #442AC0; /* BRAND PRIMARY — logo aprovado */
+  --primitive-velvet-700: #3422A0;
+  --primitive-velvet-800: #281A80;
+  --primitive-velvet-900: #1B1158;
+  --primitive-velvet-950: #110B3A;
+
+  /* Desire scale */
+  --primitive-desire-50:  #FFF0F5;
+  --primitive-desire-100: #FFE0EE;
+  --primitive-desire-200: #FFC0D7;
+  --primitive-desire-300: #FF91BB;
+  --primitive-desire-400: #FF5A94;
+  --primitive-desire-500: #FD296C; /* BRAND SECONDARY — logo aprovado */
+  --primitive-desire-600: #E01256;
+  --primitive-desire-700: #BA0E46;
+  --primitive-desire-800: #880A34;
+  --primitive-desire-900: #5C0723;
+  --primitive-desire-950: #3A0416;
+
+  /* Obsidiana scale */
+  --primitive-obsidiana-50:  #F0EEFF;
+  --primitive-obsidiana-100: #E2DEFF;
+  --primitive-obsidiana-200: #C7C1F8;
+  --primitive-obsidiana-300: #A49BEB;
+  --primitive-obsidiana-400: #7E73D4;
+  --primitive-obsidiana-500: #5E54B8;
+  --primitive-obsidiana-600: #47409A;
+  --primitive-obsidiana-700: #32297A;
+  --primitive-obsidiana-800: #22185A;
+  --primitive-obsidiana-900: #140F38;
+  --primitive-obsidiana-950: #0D0B1E; /* BRAND DARK BASE */
+
+  /* Neutral scale (violet-tinted) */
+  --primitive-neutral-0:    #FFFFFF;
+  --primitive-neutral-50:   #FAFAFE;
+  --primitive-neutral-100:  #F4F4FC;
+  --primitive-neutral-200:  #E8E8F4;
+  --primitive-neutral-300:  #D0D0E4;
+  --primitive-neutral-400:  #A8A8C8;
+  --primitive-neutral-500:  #7878A0;
+  --primitive-neutral-600:  #565680;
+  --primitive-neutral-700:  #404060;
+  --primitive-neutral-800:  #2A2A45;
+  --primitive-neutral-900:  #18182E;
+  --primitive-neutral-950:  #0E0E1E;
+
+  /* ─────────────────────────────────────────────
+     LAYER 1: Semantic — Light mode (default)
+     ───────────────────────────────────────────── */
+
+  /* Brand */
+  --color-brand-primary:        var(--primitive-velvet-600);
+  --color-brand-primary-light:  var(--primitive-velvet-400);
+  --color-brand-primary-dark:   var(--primitive-velvet-700);
+  --color-brand-secondary:      var(--primitive-desire-500);
+  --color-brand-secondary-light:var(--primitive-desire-300);
+  --color-brand-secondary-dark: var(--primitive-desire-700);
+
+  /* Backgrounds */
+  --color-bg-primary:   var(--primitive-neutral-0);
+  --color-bg-secondary: var(--primitive-neutral-50);
+  --color-bg-tertiary:  var(--primitive-neutral-100);
+  --color-bg-invert:    var(--primitive-obsidiana-950);
+  --color-bg-brand:     var(--primitive-velvet-50);
+  --color-bg-accent:    var(--primitive-desire-50);
+
+  /* Text */
+  --color-text-primary:   var(--primitive-neutral-900);
+  --color-text-secondary: var(--primitive-neutral-600);
+  --color-text-tertiary:  var(--primitive-neutral-500);
+  --color-text-invert:    var(--primitive-neutral-0);
+  --color-text-brand:     var(--primitive-velvet-600);
+  --color-text-accent:    var(--primitive-desire-500);
+  --color-text-disabled:  var(--primitive-neutral-400);
+
+  /* Borders */
+  --color-border-default: var(--primitive-neutral-200);
+  --color-border-subtle:  var(--primitive-neutral-100);
+  --color-border-strong:  var(--primitive-neutral-300);
+  --color-border-brand:   var(--primitive-velvet-600);
+  --color-border-accent:  var(--primitive-desire-500);
+  --color-border-focus:   var(--primitive-velvet-500);
+
+  /* Actions (buttons) */
+  --color-action-primary-bg:          var(--primitive-velvet-600);
+  --color-action-primary-bg-hover:    var(--primitive-velvet-700);
+  --color-action-primary-bg-active:   var(--primitive-velvet-800);
+  --color-action-primary-text:        var(--primitive-neutral-0);
+  --color-action-secondary-bg:        var(--primitive-desire-500);
+  --color-action-secondary-bg-hover:  var(--primitive-desire-600);
+  --color-action-secondary-bg-active: var(--primitive-desire-700);
+  --color-action-secondary-text:      var(--primitive-neutral-0);
+  --color-action-ghost-text:          var(--primitive-velvet-600);
+  --color-action-ghost-bg-hover:      var(--primitive-velvet-50);
+  --color-action-ghost-border:        var(--primitive-velvet-600);
+
+  /* Feedback */
+  --color-feedback-success-bg:     #ECFDF5;
+  --color-feedback-success-text:   #065F46;
+  --color-feedback-success-border: #6EE7B7;
+  --color-feedback-warning-bg:     #FFFBEB;
+  --color-feedback-warning-text:   #78350F;
+  --color-feedback-warning-border: #FCD34D;
+  --color-feedback-error-bg:       var(--primitive-desire-50);
+  --color-feedback-error-text:     var(--primitive-desire-800);
+  --color-feedback-error-border:   var(--primitive-desire-300);
+  --color-feedback-info-bg:        var(--primitive-velvet-50);
+  --color-feedback-info-text:      var(--primitive-velvet-700);
+  --color-feedback-info-border:    var(--primitive-velvet-300);
+
+  /* Premium / Platform-specific */
+  --color-premium-badge-bg:     var(--primitive-velvet-600);
+  --color-premium-badge-text:   var(--primitive-neutral-0);
+  --color-creator-badge-bg:     var(--primitive-desire-500);
+  --color-creator-badge-text:   var(--primitive-neutral-0);
+  --color-ai-badge-bg:          var(--primitive-velvet-100);
+  --color-ai-badge-text:        var(--primitive-velvet-700);
+  --color-tip:                  var(--primitive-desire-500);
+
+  /* ─────────────────────────────────────────────
+     LAYER 2: Typography
+     ───────────────────────────────────────────── */
+
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* Fluid type scale — clamp(min, preferred, max) */
+  --text-xs:          clamp(0.70rem, 0.68rem + 0.10vw, 0.75rem);   /* 11.2–12px */
+  --text-sm:          clamp(0.80rem, 0.77rem + 0.17vw, 0.875rem);  /* 12.8–14px */
+  --text-base:        clamp(1rem,    0.96rem + 0.22vw, 1.125rem);  /* 16–18px */
+  --text-lg:          clamp(1.125rem,1.07rem + 0.28vw, 1.25rem);   /* 18–20px */
+  --text-xl:          clamp(1.25rem, 1.18rem + 0.37vw, 1.5rem);    /* 20–24px */
+  --text-2xl:         clamp(1.5rem,  1.40rem + 0.52vw, 1.875rem);  /* 24–30px */
+  --text-3xl:         clamp(1.875rem,1.73rem + 0.74vw, 2.25rem);   /* 30–36px */
+  --text-display-sm:  clamp(2.25rem, 2.00rem + 1.25vw, 3rem);      /* 36–48px */
+  --text-display-md:  clamp(3rem,    2.60rem + 2.00vw, 3.75rem);   /* 48–60px */
+  --text-display-lg:  clamp(3.75rem, 3.20rem + 2.75vw, 4.5rem);    /* 60–72px */
+  --text-display-xl:  clamp(4.5rem,  3.80rem + 3.50vw, 5.625rem);  /* 72–90px */
+
+  /* Font weights */
+  --weight-light:     300;
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;
+
+  /* Line heights */
+  --leading-none:    1;
+  --leading-tight:   1.2;
+  --leading-snug:    1.375;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.625;
+
+  /* Letter spacing */
+  --tracking-tight:  -0.025em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.025em;
+  --tracking-wider:   0.05em;
+  --tracking-widest:  0.1em;
+
+  /* ─────────────────────────────────────────────
+     LAYER 3: Spacing (base 4px)
+     ───────────────────────────────────────────── */
+  --space-0:   0px;
+  --space-px:  1px;
+  --space-0-5: 2px;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-7:   28px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-14:  56px;
+  --space-16:  64px;
+  --space-20:  80px;
+  --space-24:  96px;
+  --space-32:  128px;
+  --space-40:  160px;
+  --space-48:  192px;
+  --space-64:  256px;
+
+  /* ─────────────────────────────────────────────
+     LAYER 4: Border Radius
+     ───────────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-3xl:  32px;
+  --radius-full: 9999px;
+
+  /* Component-specific */
+  --radius-button:  var(--radius-lg);     /* 12px — botões */
+  --radius-card:    var(--radius-xl);     /* 16px — cards de conteúdo */
+  --radius-badge:   var(--radius-full);   /* pill — badges */
+  --radius-modal:   var(--radius-2xl);    /* 24px — modais */
+  --radius-avatar:  var(--radius-full);   /* circular — avatars */
+  --radius-input:   var(--radius-md);     /* 8px — inputs */
+
+  /* ─────────────────────────────────────────────
+     LAYER 5: Shadows
+     ───────────────────────────────────────────── */
+  --shadow-sm:     0 1px 2px rgba(13,11,30,0.08);
+  --shadow-md:     0 4px 8px rgba(13,11,30,0.12), 0 1px 3px rgba(13,11,30,0.08);
+  --shadow-lg:     0 10px 20px rgba(13,11,30,0.15), 0 2px 6px rgba(13,11,30,0.10);
+  --shadow-xl:     0 20px 40px rgba(13,11,30,0.20), 0 4px 12px rgba(13,11,30,0.12);
+  --shadow-velvet: 0 8px 24px rgba(68,42,192,0.35);
+  --shadow-desire: 0 8px 24px rgba(253,41,108,0.35);
+
+  /* ─────────────────────────────────────────────
+     LAYER 6: Motion / Animation
+     Arquétipo AMANTE: sedutor, fluido, unhurried
+     Arquétipo FORA DA LEI: bold entrances, snappy exits
+     ───────────────────────────────────────────── */
+
+  /* Durations */
+  --motion-instant: 0ms;
+  --motion-xs:      100ms;   /* Micro: hover, foco, ripple */
+  --motion-sm:      200ms;   /* UI padrão: dropdowns, toggles */
+  --motion-md:      350ms;   /* Modais, drawers, tabs */
+  --motion-lg:      500ms;   /* Hero, page transitions */
+  --motion-xl:      700ms;   /* Narrativa, intro do logo */
+
+  /* Easings */
+  --ease-standard:   cubic-bezier(0.4, 0, 0.2, 1);    /* Padrão balanceado */
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);       /* Elementos entram — desaceleram */
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);       /* Elementos saem — aceleram */
+  --ease-seductive:  cubic-bezier(0.22, 1, 0.36, 1);   /* AMANTE — spring suave e sedutor */
+  --ease-bold:       cubic-bezier(0.5, 0, 0, 1.25);    /* FORA DA LEI — mini bounce, atitude */
+
+  /* Shorthand composites (duração + easing) */
+  --transition-fast:  var(--motion-xs) var(--ease-standard);
+  --transition-std:   var(--motion-sm) var(--ease-standard);
+  --transition-enter: var(--motion-md) var(--ease-decelerate);
+  --transition-exit:  var(--motion-sm) var(--ease-accelerate);
+  --transition-hero:  var(--motion-lg) var(--ease-seductive);
+
+  /* ─────────────────────────────────────────────
+     LAYER 7: Z-index scale
+     ───────────────────────────────────────────── */
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:   10;
+  --z-sticky:   20;
+  --z-overlay:  30;
+  --z-modal:    40;
+  --z-popover:  50;
+  --z-toast:    60;
+  --z-tooltip:  70;
+
+  /* ─────────────────────────────────────────────
+     LAYER 8: Focus ring (acessibilidade)
+     ───────────────────────────────────────────── */
+  --focus-ring: 0 0 0 3px rgba(68,42,192,0.45);
+  --focus-ring-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────
+   DARK MODE — Obsidiana system
+   4 níveis de superfície, NÃO inversão do light
+   ───────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Backgrounds — 4 surface levels */
+    --color-bg-primary:   #0D0B1E;  /* base */
+    --color-bg-secondary: #151326;  /* elevated */
+    --color-bg-tertiary:  #1E1B32;  /* overlay */
+    --color-bg-invert:    #F0EDF8;
+    --color-bg-brand:     #12103A;
+    --color-bg-accent:    #1E0510;
+
+    /* Text */
+    --color-text-primary:   #F0EDF8;
+    --color-text-secondary: #A89DC8;
+    --color-text-tertiary:  #6B6088;
+    --color-text-invert:    #0D0B1E;
+    --color-text-brand:     #C4B5FD; /* Velvet-light ~9:1 sobre Obsidiana ✅ WCAG AA */
+    --color-text-accent:    #FF6B9D;
+    --color-text-disabled:  #4A4468;
+
+    /* Borders */
+    --color-border-default: #2E2A48;
+    --color-border-subtle:  #221F3A;
+    --color-border-strong:  #3D3860;
+    --color-border-focus:   #8B73F5;
+
+    /* Actions */
+    --color-action-primary-bg:       #442AC0;
+    --color-action-primary-bg-hover: #5538D4;
+    --color-action-ghost-text:       #C4B5FD;
+    --color-action-ghost-bg-hover:   #1E1B32;
+
+    /* Shadows → glows no dark */
+    --shadow-sm:     0 1px 2px rgba(0,0,0,0.40);
+    --shadow-md:     0 4px 8px rgba(0,0,0,0.50), 0 1px 3px rgba(0,0,0,0.30);
+    --shadow-lg:     0 10px 20px rgba(0,0,0,0.60), 0 2px 6px rgba(0,0,0,0.40);
+    --shadow-velvet: 0 0 32px rgba(68,42,192,0.45);
+    --shadow-desire: 0 0 32px rgba(253,41,108,0.45);
+
+    /* Focus ring no dark */
+    --focus-ring: 0 0 0 3px rgba(139,115,245,0.55);
+
+    /* Premium */
+    --color-premium-badge-bg:  #3422A0;
+    --color-premium-badge-text:#C4B5FD;
+    --color-tip:               #FF6B9D;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   DATA ATTRIBUTE — Força dark mode via JS/HTML
+   ───────────────────────────────────────────── */
+[data-theme="dark"] {
+  --color-bg-primary:   #0D0B1E;
+  --color-bg-secondary: #151326;
+  --color-bg-tertiary:  #1E1B32;
+  --color-text-primary: #F0EDF8;
+  --color-text-brand:   #C4B5FD;
+  --color-text-accent:  #FF6B9D;
+  --color-border-default:#2E2A48;
+  --shadow-velvet: 0 0 32px rgba(68,42,192,0.45);
+}
+
+[data-theme="light"] {
+  --color-bg-primary:   var(--primitive-neutral-0);
+  --color-text-primary: var(--primitive-neutral-900);
+  --color-text-brand:   var(--primitive-velvet-600);
+}
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY UTILITIES (opcional)
+   ───────────────────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+/* ═══════════════════════════════════════════════════
+   TEMA ADULTO +18
+   Sobrescreve superfícies do dark mode para tom ainda
+   mais escuro / exclusivo em perfis +18
+   ═══════════════════════════════════════════════════ */
+[data-adult="true"] {
+  --color-bg-primary:    #080612;
+  --color-bg-secondary:  #0D0B1E;
+  --color-bg-tertiary:   #12102A;
+  --color-border-default: #1A1830;
+  --color-border-subtle:  #141224;
+  --color-brand-primary:   #5538D4;
+  --color-brand-secondary: #FF1A6B;
+  --shadow-velvet: 0 0 48px rgba(68,42,192,0.60);
+  --shadow-desire: 0 0 48px rgba(253,41,108,0.60);
+}

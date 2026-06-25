@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Configurar PIX — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <style>
+    .step-bar {
+      display: flex;
+      align-items: center;
+      padding: 20px 24px;
+      gap: 0;
+    }
+    .step-node {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .step-node.done {
+      background: #10B981;
+      color: #fff;
+    }
+    .step-node.active {
+      background: var(--color-brand-primary);
+      color: #fff;
+    }
+    .step-node.pending {
+      background: var(--color-bg-tertiary);
+      color: var(--color-text-tertiary);
+    }
+    .step-line {
+      flex: 1;
+      height: 2px;
+      background: var(--color-border-default);
+    }
+    .step-line.done {
+      background: #10B981;
+    }
+    .step-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--color-text-tertiary);
+      text-align: center;
+      margin-top: 6px;
+    }
+    .step-label.active {
+      color: var(--color-brand-primary);
+    }
+    .pix-key-chip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex: 1;
+      padding: 12px 8px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 2px solid var(--color-border-default);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      min-height: 52px;
+      transition: all 0.15s;
+    }
+    .pix-key-chip.selected {
+      border-color: var(--color-brand-primary);
+      background: rgba(107,79,235,0.08);
+      color: var(--color-brand-primary);
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="creator-wallet.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+      </a>
+      <span class="header-title">Configurar PIX</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <main class="page-content-no-nav">
+
+    <!-- Barra de progresso (3 passos) -->
+    <div style="padding:20px 24px 8px">
+      <div style="display:flex;align-items:flex-start;gap:0">
+        <!-- Passo 1 -->
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+          <div class="step-node done">
+            <img src="icons/check.svg" alt="" aria-hidden="true" style="width:16px;height:16px;filter:brightness(0) invert(1)">
+          </div>
+          <div class="step-label">Dados</div>
+        </div>
+
+        <div class="step-line done" style="margin-top:16px"></div>
+
+        <!-- Passo 2 (ativo) -->
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+          <div class="step-node active">2</div>
+          <div class="step-label active">PIX</div>
+        </div>
+
+        <div class="step-line" style="margin-top:16px"></div>
+
+        <!-- Passo 3 -->
+        <div style="display:flex;flex-direction:column;align-items:center;flex:1">
+          <div class="step-node pending">3</div>
+          <div class="step-label">Confirmacao</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:16px 24px 32px">
+
+      <!-- Titulo do passo -->
+      <div style="margin-bottom:24px">
+        <h1 style="font-size:20px;font-weight:700;margin-bottom:8px">Configure sua chave PIX</h1>
+        <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.6">
+          Informe a chave PIX para receber seus saques com seguranca e rapidez.
+        </p>
+      </div>
+
+      <!-- Tipo de chave -->
+      <div class="form-group">
+        <div class="form-label">Tipo de chave PIX</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="pix-key-chip selected" aria-pressed="true" style="flex-basis:calc(50% - 4px)">
+            <img src="icons/user.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+            CPF
+          </button>
+          <button class="pix-key-chip" aria-pressed="false" style="flex-basis:calc(50% - 4px)">
+            <img src="icons/at-sign.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+            Email
+          </button>
+          <button class="pix-key-chip" aria-pressed="false" style="flex-basis:calc(50% - 4px)">
+            <img src="icons/message.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+            Telefone
+          </button>
+          <button class="pix-key-chip" aria-pressed="false" style="flex-basis:calc(50% - 4px)">
+            <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+            Aleatoria
+          </button>
+        </div>
+      </div>
+
+      <!-- Input da chave -->
+      <div class="form-group">
+        <label class="form-label" for="pix-key-value">Numero do CPF</label>
+        <input
+          type="text"
+          id="pix-key-value"
+          class="form-input"
+          placeholder="000.000.000-00"
+          inputmode="numeric"
+        >
+      </div>
+
+      <!-- Nome do titular -->
+      <div class="form-group">
+        <label class="form-label" for="pix-owner-name">Nome completo do titular</label>
+        <input
+          type="text"
+          id="pix-owner-name"
+          class="form-input"
+          placeholder="Como aparece no banco"
+        >
+      </div>
+
+      <!-- Aviso de segurança -->
+      <div style="padding:14px 16px;background:rgba(16,185,129,0.08);border-radius:12px;border:1px solid rgba(16,185,129,0.2);margin-bottom:24px;display:flex;align-items:flex-start;gap:10px">
+        <img src="icons/lock.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:invert(58%) sepia(60%) saturate(500%) hue-rotate(120deg);flex-shrink:0;margin-top:1px">
+        <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin:0">
+          Seus dados sao protegidos por criptografia e <strong style="color:var(--color-text-primary)">nao sao compartilhados</strong> com terceiros. Usamos sua chave PIX apenas para processar saques.
+        </p>
+      </div>
+
+      <!-- Botao confirmar -->
+      <button class="btn btn-primary btn-full btn-lg">
+        <img src="icons/check.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:brightness(0) invert(1)">
+        Confirmar chave PIX
+      </button>
+
+      <button class="btn btn-ghost btn-full" style="margin-top:8px" onclick="history.back()">
+        Voltar
+      </button>
+
+    </div>
+
+  </main>
+
+</div>
+</body>
+</html>

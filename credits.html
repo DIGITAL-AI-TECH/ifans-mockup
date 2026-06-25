@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Comprar Créditos — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      <a href="wallet.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+      </a>
+      <span class="header-title">Comprar Créditos</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <main class="page-content">
+
+    <!-- Taxa de conversão -->
+    <div style="text-align:center;padding:16px 16px 8px">
+      <p style="font-size:13px;color:var(--color-text-tertiary)">1 crédito = R$ 0,10</p>
+    </div>
+
+    <!-- Grid 4 pacotes -->
+    <div class="credits-grid">
+
+      <!-- Pacote Starter -->
+      <div class="credit-package">
+        <div class="credit-package-amount">
+          <img src="icons/coins.svg" alt="" aria-hidden="true" class="credit-package-icon">
+          100
+        </div>
+        <div class="credit-package-price">R$ 9,90</div>
+        <div class="credit-package-label">Pacote Starter</div>
+      </div>
+
+      <!-- Pacote Popular — melhor valor -->
+      <div class="credit-package best-value">
+        <span class="credit-package-badge">Melhor valor</span>
+        <div class="credit-package-amount" style="margin-top:8px">
+          <img src="icons/coins.svg" alt="" aria-hidden="true" class="credit-package-icon">
+          300
+        </div>
+        <div class="credit-package-price">R$ 24,90</div>
+        <div class="credit-package-label">Pacote Popular</div>
+      </div>
+
+      <!-- Pacote Pro -->
+      <div class="credit-package">
+        <div class="credit-package-amount">
+          <img src="icons/coins.svg" alt="" aria-hidden="true" class="credit-package-icon">
+          600
+        </div>
+        <div class="credit-package-price">R$ 44,90</div>
+        <div class="credit-package-label">Pacote Pro</div>
+      </div>
+
+      <!-- Pacote Elite -->
+      <div class="credit-package">
+        <div class="credit-package-amount">
+          <img src="icons/coins.svg" alt="" aria-hidden="true" class="credit-package-icon">
+          1000
+        </div>
+        <div class="credit-package-price">R$ 69,90</div>
+        <div class="credit-package-label">Pacote Elite</div>
+      </div>
+
+    </div>
+
+    <!-- Métodos de pagamento -->
+    <div style="padding:0 16px 32px">
+      <div class="section-header" style="padding:4px 0 12px">
+        <div class="section-title">Forma de pagamento</div>
+      </div>
+
+      <!-- PIX — selecionado -->
+      <div style="padding:16px;background:var(--color-bg-secondary);border-radius:16px;border:2px solid var(--color-brand-primary);margin-bottom:8px;display:flex;align-items:center;gap:12px">
+        <div style="width:44px;height:44px;border-radius:12px;background:#00C48C;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <span style="font-size:16px;font-weight:900;color:#fff">P</span>
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:700">PIX</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">Instantâneo · Gratuito</div>
+        </div>
+        <div style="width:20px;height:20px;border-radius:50%;background:var(--color-brand-primary);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/check.svg" alt="" aria-hidden="true" style="width:12px;height:12px;filter:brightness(0) invert(1)">
+        </div>
+      </div>
+
+      <!-- Cartão de crédito — não selecionado -->
+      <div style="padding:16px;background:var(--color-bg-secondary);border-radius:16px;border:2px solid transparent;display:flex;align-items:center;gap:12px;margin-bottom:24px;cursor:pointer">
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(68,42,192,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/coins.svg" alt="" aria-hidden="true" style="width:22px;height:22px">
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600">Cartão de crédito</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">Visa, Master, Elo</div>
+        </div>
+        <div style="width:20px;height:20px;border-radius:50%;border:2px solid var(--color-border-default);flex-shrink:0"></div>
+      </div>
+
+      <!-- Botão comprar -->
+      <a href="checkout.html" class="btn btn-primary btn-full btn-lg">
+        <img src="icons/coins.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:brightness(0) invert(1)">
+        Comprar 300 créditos — R$ 24,90
+      </a>
+
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+</div>
+</body>
+</html>

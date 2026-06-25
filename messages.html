@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mensagens — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      <a href="feed.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+      </a>
+      <span class="header-title">Mensagens</span>
+      <div class="header-actions">
+        <button class="header-action-btn" aria-label="Nova mensagem">
+          <img src="icons/camera.svg" alt="" aria-hidden="true">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+
+    <!-- Barra de busca -->
+    <div class="search-bar">
+      <div class="search-input-wrap">
+        <div class="search-input-icon">
+          <img src="icons/search.svg" alt="" aria-hidden="true" style="width:18px;height:18px">
+        </div>
+        <input type="search" class="search-input" placeholder="Buscar mensagens..." aria-label="Buscar mensagens">
+      </div>
+    </div>
+
+    <!-- Lista de conversas -->
+    <div class="message-list">
+
+      <!-- Conversa 1 — não lida -->
+      <a href="#" class="message-item unread" style="background:rgba(107,79,235,0.05);text-decoration:none;color:inherit">
+        <div class="avatar-initials avatar-md ring-creator" style="font-size:16px;flex-shrink:0">A</div>
+        <div class="message-info">
+          <div class="message-name" style="font-weight:700">Ana Lima</div>
+          <div class="message-preview">Oi! Obrigada por assinar meu plano</div>
+        </div>
+        <div class="message-meta">
+          <span class="message-time">14:30</span>
+          <div class="message-unread-dot"></div>
+        </div>
+      </a>
+
+      <!-- Conversa 2 — não lida -->
+      <a href="#" class="message-item unread" style="background:rgba(107,79,235,0.05);text-decoration:none;color:inherit">
+        <div class="avatar-initials avatar-md ring-premium" style="font-size:16px;flex-shrink:0;background:#3422A0">C</div>
+        <div class="message-info">
+          <div class="message-name" style="font-weight:700">Carol Santos</div>
+          <div class="message-preview">Novo conteudo exclusivo disponivel pra voce</div>
+        </div>
+        <div class="message-meta">
+          <span class="message-time">11:15</span>
+          <div class="message-unread-dot"></div>
+        </div>
+      </a>
+
+      <!-- Conversa 3 — lida -->
+      <a href="#" class="message-item" style="text-decoration:none;color:inherit">
+        <div class="avatar-initials avatar-md" style="font-size:16px;flex-shrink:0;background:#FD296C">P</div>
+        <div class="message-info">
+          <div class="message-name">Pedro Moraes</div>
+          <div class="message-preview">Voce: Obrigado pelo apoio!</div>
+        </div>
+        <div class="message-meta">
+          <span class="message-time">Ontem</span>
+        </div>
+      </a>
+
+      <!-- Conversa 4 — lida -->
+      <a href="#" class="message-item" style="text-decoration:none;color:inherit">
+        <div class="avatar-initials avatar-md" style="font-size:16px;flex-shrink:0;background:#10B981">J</div>
+        <div class="message-info">
+          <div class="message-name">Julia Ramos</div>
+          <div class="message-preview">Quando sai o proximo video?</div>
+        </div>
+        <div class="message-meta">
+          <span class="message-time">Ontem</span>
+        </div>
+      </a>
+
+      <!-- Conversa 5 — lida -->
+      <a href="#" class="message-item" style="text-decoration:none;color:inherit">
+        <div class="avatar-initials avatar-md ring-vip" style="font-size:16px;flex-shrink:0;background:#F59E0B">R</div>
+        <div class="message-info">
+          <div class="message-name">Rafael Costa</div>
+          <div class="message-preview">Sim, pode enviar o conteudo PPV</div>
+        </div>
+        <div class="message-meta">
+          <span class="message-time">Seg</span>
+        </div>
+      </a>
+
+      <!-- Conversa 6 — lida -->
+      <a href="#" class="message-item" style="text-decoration:none;color:inherit">
+        <div class="avatar-initials avatar-md" style="font-size:16px;flex-shrink:0;background:#6B4FEB">F</div>
+        <div class="message-info">
+          <div class="message-name">Fernanda Oliveira</div>
+          <div class="message-preview">Voce: Claro! Seja bem-vinda</div>
+        </div>
+        <div class="message-meta">
+          <span class="message-time">Dom</span>
+        </div>
+      </a>
+
+      <!-- Conversa 7 — lida -->
+      <a href="#" class="message-item" style="text-decoration:none;color:inherit">
+        <div class="avatar-initials avatar-md" style="font-size:16px;flex-shrink:0;background:#3422A0">L</div>
+        <div class="message-info">
+          <div class="message-name">Lucas Pereira</div>
+          <div class="message-preview">Adorei o seu ultimo post!</div>
+        </div>
+        <div class="message-meta">
+          <span class="message-time">Sab</span>
+        </div>
+      </a>
+
+      <!-- Conversa 8 — lida -->
+      <a href="#" class="message-item" style="text-decoration:none;color:inherit">
+        <div class="avatar-initials avatar-md" style="font-size:16px;flex-shrink:0;background:#374151">M</div>
+        <div class="message-info">
+          <div class="message-name">Marina Silva</div>
+          <div class="message-preview">Voce: Ate a proxima live!</div>
+        </div>
+        <div class="message-meta">
+          <span class="message-time">Sex</span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+</div>
+</body>
+</html>

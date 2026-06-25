@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Dashboard — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="creator-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <img src="logos/symbol-only.svg" alt="ifans" class="header-logo">
+        <span class="header-title" style="margin-left:8px">Creator Studio</span>
+      </div>
+      <div class="header-actions">
+        <button class="header-action-btn" aria-label="Notificações">
+          <img src="icons/bell.svg" alt="" aria-hidden="true">
+        </button>
+        <button class="header-action-btn" aria-label="Configurações">
+          <img src="icons/settings.svg" alt="" aria-hidden="true">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Creator top nav -->
+  <nav class="creator-top-nav" role="navigation" aria-label="Navegação do criador">
+    <a href="creator-dashboard.html" class="creator-top-nav-item ativo">
+      <img src="icons/bar-chart.svg" alt="" aria-hidden="true">
+      Dashboard
+    </a>
+    <a href="creator-new-post.html" class="creator-top-nav-item">
+      <img src="icons/camera.svg" alt="" aria-hidden="true">
+      Novo Post
+    </a>
+    <a href="creator-analytics.html" class="creator-top-nav-item">
+      <img src="icons/bar-chart.svg" alt="" aria-hidden="true">
+      Analytics
+    </a>
+    <a href="creator-subscribers.html" class="creator-top-nav-item">
+      <img src="icons/crown.svg" alt="" aria-hidden="true">
+      Assinantes
+    </a>
+    <a href="creator-tools.html" class="creator-top-nav-item">
+      <img src="icons/settings.svg" alt="" aria-hidden="true">
+      Ferramentas
+    </a>
+  </nav>
+
+  <main class="creator-page-content">
+
+    <!-- Saudação -->
+    <div style="padding:16px;display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div style="font-size:12px;color:var(--color-text-tertiary)">Bem-vindo de volta</div>
+        <h1 style="font-size:20px;font-weight:800">Ana Lima</h1>
+      </div>
+      <div class="avatar-initials avatar-md ring-creator" style="font-size:16px">A</div>
+    </div>
+
+    <!-- KPIs 2x2 -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-primary">
+          <img src="icons/coins.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">R$ 1.840</div>
+        <div class="kpi-label">MRR (Mensal)</div>
+        <div class="kpi-trend">+12% este mês</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-secondary">
+          <img src="icons/crown.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">247</div>
+        <div class="kpi-label">Assinantes</div>
+        <div class="kpi-trend">+18 esta semana</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-success">
+          <img src="icons/zap.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">R$ 420</div>
+        <div class="kpi-label">Gorjetas (30d)</div>
+        <div class="kpi-trend">+35% vs mês ant.</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-gold">
+          <img src="icons/eye.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">18.4k</div>
+        <div class="kpi-label">Visualizações</div>
+        <div class="kpi-trend down">-3% esta semana</div>
+      </div>
+    </div>
+
+    <!-- Gráfico MRR -->
+    <div class="panel">
+      <div class="card-body">
+        <div class="mrr-chart-title">Receita Mensal (MRR)</div>
+        <div class="mrr-chart-bars">
+          <div class="mrr-bar" style="height:45%"></div>
+          <div class="mrr-bar" style="height:52%"></div>
+          <div class="mrr-bar" style="height:48%"></div>
+          <div class="mrr-bar" style="height:60%"></div>
+          <div class="mrr-bar" style="height:55%"></div>
+          <div class="mrr-bar" style="height:70%"></div>
+          <div class="mrr-bar current" style="height:88%"></div>
+        </div>
+        <div class="mrr-labels">
+          <span class="mrr-label">Dez</span>
+          <span class="mrr-label">Jan</span>
+          <span class="mrr-label">Fev</span>
+          <span class="mrr-label">Mar</span>
+          <span class="mrr-label">Abr</span>
+          <span class="mrr-label">Mai</span>
+          <span class="mrr-label">Jun</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ações rápidas -->
+    <div class="section-header">
+      <div class="section-title">Ações rápidas</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 16px 16px">
+      <a href="creator-new-post.html" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px;background:var(--color-bg-secondary);border-radius:16px;text-align:center;min-height:88px;justify-content:center">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#442AC0,#FD296C);display:flex;align-items:center;justify-content:center">
+          <img src="icons/camera.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+        </div>
+        <span style="font-size:13px;font-weight:600">Novo Post</span>
+      </a>
+      <a href="creator-schedule.html" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px;background:var(--color-bg-secondary);border-radius:16px;text-align:center;min-height:88px;justify-content:center">
+        <div style="width:40px;height:40px;border-radius:50%;background:rgba(107,79,235,0.2);display:flex;align-items:center;justify-content:center">
+          <img src="icons/calendar.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+        </div>
+        <span style="font-size:13px;font-weight:600">Agendar</span>
+      </a>
+      <a href="live-creator.html" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px;background:var(--color-bg-secondary);border-radius:16px;text-align:center;min-height:88px;justify-content:center">
+        <div style="width:40px;height:40px;border-radius:50%;background:rgba(253,41,108,0.15);display:flex;align-items:center;justify-content:center">
+          <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+        </div>
+        <span style="font-size:13px;font-weight:600">Iniciar Live</span>
+      </a>
+      <a href="creator-broadcast.html" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px;background:var(--color-bg-secondary);border-radius:16px;text-align:center;min-height:88px;justify-content:center">
+        <div style="width:40px;height:40px;border-radius:50%;background:rgba(245,158,11,0.15);display:flex;align-items:center;justify-content:center">
+          <img src="icons/send.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+        </div>
+        <span style="font-size:13px;font-weight:600">Broadcast</span>
+      </a>
+    </div>
+
+    <!-- Posts recentes -->
+    <div class="section-header">
+      <div class="section-title">Posts recentes</div>
+      <button class="section-action">Ver todos</button>
+    </div>
+    <div style="display:flex;flex-direction:column">
+
+      <!-- Post 1 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:48px;height:48px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,#442AC0,#FD296C)"></div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Ensaio de verão na praia</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">Hoje, 14:30</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/eye.svg" alt="visualizações" style="width:14px;height:14px;opacity:0.6">
+            2.1k
+          </div>
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/heart.svg" alt="curtidas" style="width:14px;height:14px;opacity:0.6">
+            348
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:48px;height:48px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,#1B1158,#442AC0)"></div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Bastidores do estudio</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">Ontem, 19:00</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/eye.svg" alt="visualizações" style="width:14px;height:14px;opacity:0.6">
+            1.8k
+          </div>
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/heart.svg" alt="curtidas" style="width:14px;height:14px;opacity:0.6">
+            291
+          </div>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px">
+        <div style="width:48px;height:48px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,#3422A0,#FD296C)"></div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Sessao exclusiva PPV</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">22 Jun, 10:15</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/eye.svg" alt="visualizações" style="width:14px;height:14px;opacity:0.6">
+            940
+          </div>
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/heart.svg" alt="curtidas" style="width:14px;height:14px;opacity:0.6">
+            187
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Bottom nav (area do fa) -->
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>

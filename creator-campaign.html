@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Campanhas — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <style>
+    .campaign-card {
+      margin: 0 16px 12px;
+      border-radius: 16px;
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border-subtle);
+      overflow: hidden;
+    }
+    .campaign-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 16px 12px;
+    }
+    .campaign-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .campaign-status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .campaign-stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-top: 1px solid var(--color-border-subtle);
+    }
+    .form-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1.5px solid var(--color-border-default);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      min-height: 44px;
+      transition: all 0.15s;
+    }
+    .form-chip.selected {
+      background: var(--color-brand-primary);
+      border-color: var(--color-brand-primary);
+      color: #fff;
+    }
+    .form-section {
+      background: var(--color-bg-secondary);
+      border-radius: 16px;
+      padding: 16px;
+      margin: 0 16px 16px;
+    }
+    .form-section-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+<div class="creator-page">
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="creator-dashboard.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+      </a>
+      <span class="header-title">Campanhas</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <nav class="creator-top-nav" role="navigation">
+    <a href="creator-dashboard.html" class="creator-top-nav-item"><img src="icons/bar-chart.svg" alt="" aria-hidden="true"> Dashboard</a>
+    <a href="creator-new-post.html" class="creator-top-nav-item"><img src="icons/camera.svg" alt="" aria-hidden="true"> Novo Post</a>
+    <a href="creator-analytics.html" class="creator-top-nav-item"><img src="icons/bar-chart.svg" alt="" aria-hidden="true"> Analytics</a>
+    <a href="creator-subscribers.html" class="creator-top-nav-item"><img src="icons/crown.svg" alt="" aria-hidden="true"> Assinantes</a>
+    <a href="creator-tools.html" class="creator-top-nav-item"><img src="icons/settings.svg" alt="" aria-hidden="true"> Ferramentas</a>
+    <a href="creator-wallet.html" class="creator-top-nav-item"><img src="icons/coins.svg" alt="" aria-hidden="true"> Carteira</a>
+    <a href="creator-schedule.html" class="creator-top-nav-item"><img src="icons/calendar.svg" alt="" aria-hidden="true"> Agenda</a>
+    <a href="creator-broadcast.html" class="creator-top-nav-item"><img src="icons/send.svg" alt="" aria-hidden="true"> Broadcast</a>
+    <a href="creator-campaign.html" class="creator-top-nav-item ativo"><img src="icons/zap.svg" alt="" aria-hidden="true"> Campanhas</a>
+  </nav>
+
+  <main class="creator-page-content">
+
+    <!-- Campanha ativa -->
+    <div class="section-header" style="margin-top:8px">
+      <span class="section-title">Campanhas ativas</span>
+      <span style="font-size:13px;font-weight:600;color:#10B981">1 ativa</span>
+    </div>
+
+    <div class="campaign-card">
+      <div class="campaign-card-header">
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+            <span class="campaign-status" style="background:rgba(16,185,129,0.12);color:#10B981">
+              <span class="campaign-status-dot" style="background:#10B981"></span>
+              Ativa
+            </span>
+            <span style="font-size:12px;color:var(--color-text-tertiary)">Expira em 6 dias</span>
+          </div>
+          <div style="font-size:16px;font-weight:700">Black Friday — 50% off</div>
+          <div style="font-size:13px;color:var(--color-text-tertiary);margin-top:2px">R$ 29,90 → R$ 14,90 / mês</div>
+        </div>
+        <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Editar campanha">
+          <img src="icons/settings.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.5">
+        </button>
+      </div>
+
+      <div style="height:6px;background:var(--color-bg-tertiary);margin:0 16px 12px;border-radius:3px;overflow:hidden">
+        <div style="width:72%;height:100%;background:linear-gradient(90deg,#10B981,#6B4FEB);border-radius:3px"></div>
+      </div>
+      <div style="padding:0 16px 4px;font-size:11px;color:var(--color-text-tertiary)">6 de 30 dias restantes</div>
+
+      <div class="campaign-stat">
+        <div style="width:32px;height:32px;border-radius:8px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/user.svg" alt="" aria-hidden="true" style="width:16px;height:16px;filter:invert(58%) sepia(60%) saturate(500%) hue-rotate(120deg)">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:600">38 novas assinaturas</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary)">geradas pela campanha</div>
+        </div>
+        <div style="font-size:16px;font-weight:800;color:#10B981">+38</div>
+      </div>
+
+      <div class="campaign-stat" style="border-top:1px solid var(--color-border-subtle)">
+        <div style="width:32px;height:32px;border-radius:8px;background:rgba(68,42,192,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/coins.svg" alt="" aria-hidden="true" style="width:16px;height:16px;opacity:0.7">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:600">R$ 566,20 de receita adicional</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary)">via desconto da campanha</div>
+        </div>
+        <div style="font-size:16px;font-weight:800;color:var(--color-brand-primary)">+R$566</div>
+      </div>
+
+      <div style="padding:12px 16px 16px;display:flex;gap:8px">
+        <button class="btn btn-secondary btn-sm" style="flex:1">
+          <img src="icons/x.svg" alt="" aria-hidden="true" style="width:14px;height:14px;opacity:0.6">
+          Encerrar
+        </button>
+        <button class="btn btn-primary btn-sm" style="flex:1">
+          <img src="icons/share.svg" alt="" aria-hidden="true" style="width:14px;height:14px;filter:brightness(0) invert(1)">
+          Compartilhar
+        </button>
+      </div>
+    </div>
+
+    <!-- Separador -->
+    <div class="divider" style="margin:8px 0"></div>
+
+    <!-- Formulário nova campanha -->
+    <div class="section-header">
+      <span class="section-title">Criar nova campanha</span>
+    </div>
+
+    <div style="padding:0 16px 16px">
+
+      <!-- Tipo de campanha -->
+      <div class="form-group">
+        <div class="form-label">Tipo de oferta</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <button class="form-chip selected" aria-pressed="true">Desconto %</button>
+          <button class="form-chip" aria-pressed="false">Preco especial</button>
+          <button class="form-chip" aria-pressed="false">Bundle</button>
+        </div>
+      </div>
+
+      <!-- Valor do desconto -->
+      <div class="form-group">
+        <label class="form-label" for="discount-value">Percentual de desconto</label>
+        <div style="position:relative">
+          <input type="number" id="discount-value" class="form-input" value="30" min="5" max="90" style="padding-right:48px">
+          <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:16px;font-weight:700;color:var(--color-text-tertiary)">%</span>
+        </div>
+      </div>
+
+      <!-- Validade -->
+      <div class="form-group">
+        <label class="form-label" for="campaign-end">Data de encerramento</label>
+        <input type="date" id="campaign-end" class="form-input" value="2026-07-31">
+      </div>
+
+      <!-- Audiência -->
+      <div class="form-group">
+        <div class="form-label">Audiência alvo</div>
+        <div style="display:flex;gap:8px">
+          <button class="form-chip selected" aria-pressed="true" style="flex:1;justify-content:center">Novos usuarios</button>
+          <button class="form-chip" aria-pressed="false" style="flex:1;justify-content:center">Todos</button>
+        </div>
+      </div>
+
+      <!-- Nome da campanha -->
+      <div class="form-group">
+        <label class="form-label" for="campaign-name">Nome da campanha</label>
+        <input type="text" id="campaign-name" class="form-input" placeholder="Ex: Promocao de Julho">
+      </div>
+
+      <button class="btn btn-primary btn-full" style="margin-top:4px">
+        <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:brightness(0) invert(1)">
+        Criar campanha
+      </button>
+
+    </div>
+
+    <div style="height:16px"></div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Buscar — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <img src="logos/symbol-only.svg" alt="ifans" class="header-logo" style="height:26px">
+      </div>
+      <span class="header-title">Buscar</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <main class="page-content">
+
+    <!-- Barra de busca -->
+    <div class="search-bar">
+      <div class="search-input-wrap">
+        <div class="search-input-icon">
+          <img src="icons/search.svg" alt="" aria-hidden="true" style="width:18px;height:18px">
+        </div>
+        <input type="search" class="search-input" placeholder="Criadores, conteúdo, tags..." autofocus aria-label="Buscar">
+      </div>
+    </div>
+
+    <!-- Em Alta -->
+    <div class="section-header">
+      <div class="section-title">Em Alta</div>
+    </div>
+
+    <!-- Grid estilo Explore — 3 colunas, gap 2px -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+
+      <!-- Linha 1 col 1 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#442AC0,#FD296C);position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:5px;left:5px;display:flex;align-items:center;gap:3px">
+          <img src="icons/play.svg" alt="" aria-hidden="true" style="width:11px;height:11px;filter:brightness(0) invert(1)">
+          <span style="font-size:10px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.6)">2.4K</span>
+        </div>
+      </div>
+
+      <!-- Linha 1-2 col 2 — destaque (span 2 linhas) -->
+      <div style="background:linear-gradient(135deg,#281A80,#110B3A);grid-row:span 2;position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:5px;left:5px;display:flex;align-items:center;gap:3px">
+          <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:11px;height:11px;filter:brightness(0) invert(1)">
+          <span style="font-size:10px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.6)">8.1K</span>
+        </div>
+        <div style="position:absolute;top:6px;right:6px">
+          <div style="width:18px;height:18px;background:rgba(107,79,235,0.85);border-radius:3px;display:flex;align-items:center;justify-content:center">
+            <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:10px;height:10px;filter:brightness(0) invert(1)">
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha 1 col 3 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#FD296C,#3422A0);position:relative;overflow:hidden">
+        <div style="position:absolute;top:6px;right:6px">
+          <div style="width:18px;height:18px;background:rgba(253,41,108,0.85);border-radius:3px;display:flex;align-items:center;justify-content:center">
+            <img src="icons/lock.svg" alt="" aria-hidden="true" style="width:10px;height:10px;filter:brightness(0) invert(1)">
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha 2 col 1 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#3422A0,#6B4FEB);position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:5px;left:5px;display:flex;align-items:center;gap:3px">
+          <img src="icons/play.svg" alt="" aria-hidden="true" style="width:11px;height:11px;filter:brightness(0) invert(1)">
+          <span style="font-size:10px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.6)">5.7K</span>
+        </div>
+      </div>
+
+      <!-- Linha 2 col 3 (col 2 ocupada pelo span) -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#1B1158,#442AC0);position:relative;overflow:hidden"></div>
+
+      <!-- Linha 3 col 1 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#0D0B1E,#281A80);position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:5px;left:5px;display:flex;align-items:center;gap:3px">
+          <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:11px;height:11px;filter:brightness(0) invert(1)">
+          <span style="font-size:10px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.6)">3.2K</span>
+        </div>
+      </div>
+
+      <!-- Linha 3 col 2 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#6B4FEB,#FD296C);position:relative;overflow:hidden">
+        <div style="position:absolute;top:6px;right:6px">
+          <div style="width:18px;height:18px;background:rgba(68,42,192,0.85);border-radius:3px;display:flex;align-items:center;justify-content:center">
+            <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:10px;height:10px;filter:brightness(0) invert(1)">
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha 3 col 3 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#442AC0,#0D0B1E);position:relative;overflow:hidden"></div>
+
+      <!-- Linha 4 col 1 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#FD296C,#442AC0);position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:5px;left:5px;display:flex;align-items:center;gap:3px">
+          <img src="icons/play.svg" alt="" aria-hidden="true" style="width:11px;height:11px;filter:brightness(0) invert(1)">
+          <span style="font-size:10px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.6)">12K</span>
+        </div>
+      </div>
+
+      <!-- Linha 4 col 2 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#281A80,#FD296C);position:relative;overflow:hidden">
+        <div style="position:absolute;top:6px;right:6px">
+          <div style="width:18px;height:18px;background:rgba(253,41,108,0.85);border-radius:3px;display:flex;align-items:center;justify-content:center">
+            <img src="icons/lock.svg" alt="" aria-hidden="true" style="width:10px;height:10px;filter:brightness(0) invert(1)">
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha 4 col 3 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#110B3A,#6B4FEB);position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:5px;left:5px;display:flex;align-items:center;gap:3px">
+          <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:11px;height:11px;filter:brightness(0) invert(1)">
+          <span style="font-size:10px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.6)">990</span>
+        </div>
+      </div>
+
+      <!-- Linha 5 col 1 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#3422A0,#FD296C);position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:5px;left:5px;display:flex;align-items:center;gap:3px">
+          <img src="icons/play.svg" alt="" aria-hidden="true" style="width:11px;height:11px;filter:brightness(0) invert(1)">
+          <span style="font-size:10px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.6)">4.4K</span>
+        </div>
+      </div>
+
+      <!-- Linha 5 col 2 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#6B4FEB,#281A80);position:relative;overflow:hidden"></div>
+
+      <!-- Linha 5 col 3 -->
+      <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#442AC0,#1B1158);position:relative;overflow:hidden">
+        <div style="position:absolute;bottom:5px;left:5px;display:flex;align-items:center;gap:3px">
+          <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:11px;height:11px;filter:brightness(0) invert(1)">
+          <span style="font-size:10px;font-weight:700;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.6)">1.8K</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+</div>
+</body>
+</html>

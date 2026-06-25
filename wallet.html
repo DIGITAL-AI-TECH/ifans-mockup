@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Carteira — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      <a href="profile.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+      </a>
+      <span class="header-title">Carteira</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <main class="page-content">
+
+    <!-- Card de saldo principal -->
+    <div class="wallet-balance-card">
+      <div class="wallet-balance-label">
+        <img src="icons/coins.svg" alt="" aria-hidden="true" class="wallet-balance-label" style="width:16px;height:16px;filter:brightness(0) invert(1)">
+        Seus Créditos ifans
+      </div>
+      <div class="wallet-balance-amount">
+        <img src="icons/coins.svg" alt="" aria-hidden="true" class="wallet-balance-icon">
+        350
+      </div>
+      <div class="wallet-balance-sub">≈ R$ 35,00 em créditos</div>
+      <div class="wallet-actions">
+        <a href="credits.html" class="wallet-action-btn">
+          <img src="icons/plus.svg" alt="" aria-hidden="true">
+          Comprar
+        </a>
+        <button class="wallet-action-btn">
+          <img src="icons/send.svg" alt="" aria-hidden="true">
+          Enviar
+        </button>
+      </div>
+    </div>
+
+    <!-- Histórico -->
+    <div class="section-header">
+      <div class="section-title">Histórico</div>
+      <button class="section-action">Ver tudo</button>
+    </div>
+
+    <!-- Lista de transações -->
+    <div style="display:flex;flex-direction:column;padding:0 16px;gap:0">
+
+      <!-- Compra de créditos -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/plus.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:invert(57%) sepia(100%) saturate(500%) hue-rotate(120deg)">
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600">Compra de créditos</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">20 jun 2026 · PIX</div>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#10B981;flex-shrink:0">+200</div>
+      </div>
+
+      <!-- Gorjeta enviada -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(253,41,108,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/gift.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600">Gorjeta para Ana Lima</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">19 jun 2026</div>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:var(--color-brand-secondary);flex-shrink:0">-50</div>
+      </div>
+
+      <!-- Assinatura -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(107,79,235,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600">Assinatura Creator — Ana Lima</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">01 jun 2026 · Recorrente</div>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:var(--color-brand-secondary);flex-shrink:0">-25</div>
+      </div>
+
+      <!-- PPV desbloqueado -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(253,41,108,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/unlock.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600">Conteúdo PPV desbloqueado</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">15 mai 2026</div>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:var(--color-brand-secondary);flex-shrink:0">-30</div>
+      </div>
+
+      <!-- Compra anterior -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/plus.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:invert(57%) sepia(100%) saturate(500%) hue-rotate(120deg)">
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600">Compra de créditos</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">10 mai 2026 · Cartão</div>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#10B981;flex-shrink:0">+300</div>
+      </div>
+
+      <!-- Gorjeta recebida (criador) -->
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 0">
+        <div style="width:44px;height:44px;border-radius:50%;background:rgba(245,158,11,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:600">Gorjeta recebida de pedro_m</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">02 mai 2026</div>
+        </div>
+        <div style="font-size:15px;font-weight:700;color:#10B981;flex-shrink:0">+75</div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+</div>
+</body>
+</html>

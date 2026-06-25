@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Analytics — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="creator-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="creator-dashboard.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:24px;height:24px">
+      </a>
+      <span class="header-title">Analytics</span>
+      <button class="header-action-btn" aria-label="Exportar dados">
+        <img src="icons/share.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+  </header>
+
+  <!-- Creator top nav -->
+  <nav class="creator-top-nav" role="navigation" aria-label="Navegacao do criador">
+    <a href="creator-dashboard.html" class="creator-top-nav-item">
+      <img src="icons/bar-chart.svg" alt="" aria-hidden="true">
+      Dashboard
+    </a>
+    <a href="creator-new-post.html" class="creator-top-nav-item">
+      <img src="icons/camera.svg" alt="" aria-hidden="true">
+      Novo Post
+    </a>
+    <a href="creator-analytics.html" class="creator-top-nav-item ativo">
+      <img src="icons/bar-chart.svg" alt="" aria-hidden="true">
+      Analytics
+    </a>
+    <a href="creator-subscribers.html" class="creator-top-nav-item">
+      <img src="icons/crown.svg" alt="" aria-hidden="true">
+      Assinantes
+    </a>
+    <a href="creator-tools.html" class="creator-top-nav-item">
+      <img src="icons/settings.svg" alt="" aria-hidden="true">
+      Ferramentas
+    </a>
+  </nav>
+
+  <main class="creator-page-content">
+
+    <!-- Seletor de periodo -->
+    <div style="padding:12px 16px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none" role="group" aria-label="Periodo de analise">
+      <button style="padding:6px 14px;border-radius:50px;background:var(--color-brand-primary);color:#fff;font-size:12px;font-weight:600;white-space:nowrap;min-height:32px" aria-pressed="true">7 dias</button>
+      <button style="padding:6px 14px;border-radius:50px;background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:12px;font-weight:600;white-space:nowrap;border:1px solid var(--color-border-default);min-height:32px" aria-pressed="false">30 dias</button>
+      <button style="padding:6px 14px;border-radius:50px;background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:12px;font-weight:600;white-space:nowrap;border:1px solid var(--color-border-default);min-height:32px" aria-pressed="false">3 meses</button>
+      <button style="padding:6px 14px;border-radius:50px;background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:12px;font-weight:600;white-space:nowrap;border:1px solid var(--color-border-default);min-height:32px" aria-pressed="false">1 ano</button>
+    </div>
+
+    <!-- KPIs resumo -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-primary">
+          <img src="icons/crown.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">247</div>
+        <div class="kpi-label">Assinantes ativos</div>
+        <div class="kpi-trend">+8 esta semana</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-secondary">
+          <img src="icons/coins.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">R$ 1.840</div>
+        <div class="kpi-label">Receita do periodo</div>
+        <div class="kpi-trend">+12%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-gold">
+          <img src="icons/eye.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">18.4k</div>
+        <div class="kpi-label">Visualizacoes</div>
+        <div class="kpi-trend down">-3%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-success">
+          <img src="icons/heart.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">5.2%</div>
+        <div class="kpi-label">Taxa de engajamento</div>
+        <div class="kpi-trend">+0.8pp</div>
+      </div>
+    </div>
+
+    <!-- Grafico de assinantes -->
+    <div class="panel">
+      <div class="card-body">
+        <div class="mrr-chart-title">Crescimento de assinantes</div>
+        <div class="mrr-chart-bars">
+          <div class="mrr-bar" style="height:40%;background:#6B4FEB"></div>
+          <div class="mrr-bar" style="height:50%;background:#6B4FEB"></div>
+          <div class="mrr-bar" style="height:45%;background:#6B4FEB"></div>
+          <div class="mrr-bar" style="height:62%;background:#6B4FEB"></div>
+          <div class="mrr-bar" style="height:58%;background:#6B4FEB"></div>
+          <div class="mrr-bar" style="height:72%;background:#6B4FEB"></div>
+          <div class="mrr-bar current" style="height:90%"></div>
+        </div>
+        <div class="mrr-labels">
+          <span class="mrr-label">S1</span>
+          <span class="mrr-label">S2</span>
+          <span class="mrr-label">S3</span>
+          <span class="mrr-label">S4</span>
+          <span class="mrr-label">S5</span>
+          <span class="mrr-label">S6</span>
+          <span class="mrr-label">S7</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Posts -->
+    <div class="section-header">
+      <div class="section-title">Top Posts</div>
+      <button class="section-action">Ver todos</button>
+    </div>
+    <div style="display:flex;flex-direction:column">
+
+      <!-- Rank 1 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:28px;text-align:center;flex-shrink:0">
+          <span style="font-size:16px;font-weight:800;color:var(--color-brand-secondary)">#1</span>
+        </div>
+        <div style="width:44px;height:44px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,#442AC0,#FD296C)"></div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Ensaio de verao na praia</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">Foto &bull; Hoje</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0">
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/eye.svg" alt="views" style="width:12px;height:12px;opacity:0.6">
+            2.1k
+          </div>
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/heart.svg" alt="curtidas" style="width:12px;height:12px;opacity:0.6">
+            348
+          </div>
+        </div>
+      </div>
+
+      <!-- Rank 2 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:28px;text-align:center;flex-shrink:0">
+          <span style="font-size:16px;font-weight:800;color:var(--color-text-secondary)">#2</span>
+        </div>
+        <div style="width:44px;height:44px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,#1B1158,#442AC0)"></div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Bastidores do estudio</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">Video &bull; Ontem</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0">
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/eye.svg" alt="views" style="width:12px;height:12px;opacity:0.6">
+            1.8k
+          </div>
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/heart.svg" alt="curtidas" style="width:12px;height:12px;opacity:0.6">
+            291
+          </div>
+        </div>
+      </div>
+
+      <!-- Rank 3 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px">
+        <div style="width:28px;text-align:center;flex-shrink:0">
+          <span style="font-size:16px;font-weight:800;color:var(--color-text-tertiary)">#3</span>
+        </div>
+        <div style="width:44px;height:44px;border-radius:8px;flex-shrink:0;background:linear-gradient(135deg,#3422A0,#FD296C)"></div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Sessao exclusiva PPV</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">Foto &bull; 22 Jun</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0">
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/eye.svg" alt="views" style="width:12px;height:12px;opacity:0.6">
+            940
+          </div>
+          <div style="display:flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-tertiary)">
+            <img src="icons/heart.svg" alt="curtidas" style="width:12px;height:12px;opacity:0.6">
+            187
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Fontes de receita -->
+    <div class="section-header">
+      <div class="section-title">Fontes de Receita</div>
+    </div>
+    <div style="padding:0 16px 16px;display:flex;flex-direction:column;gap:14px">
+
+      <!-- Assinaturas -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span style="font-size:13px;display:flex;align-items:center;gap:6px">
+            <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:14px;height:14px">
+            Assinaturas
+          </span>
+          <span style="font-size:13px;font-weight:700">R$ 1.240 (67%)</span>
+        </div>
+        <div style="height:6px;background:var(--color-bg-tertiary);border-radius:3px" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" aria-label="Assinaturas 67%">
+          <div style="height:100%;width:67%;background:var(--color-brand-primary);border-radius:3px"></div>
+        </div>
+      </div>
+
+      <!-- PPV -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span style="font-size:13px;display:flex;align-items:center;gap:6px">
+            <img src="icons/lock.svg" alt="" aria-hidden="true" style="width:14px;height:14px">
+            PPV
+          </span>
+          <span style="font-size:13px;font-weight:700">R$ 380 (21%)</span>
+        </div>
+        <div style="height:6px;background:var(--color-bg-tertiary);border-radius:3px" role="progressbar" aria-valuenow="21" aria-valuemin="0" aria-valuemax="100" aria-label="PPV 21%">
+          <div style="height:100%;width:21%;background:var(--color-brand-secondary);border-radius:3px"></div>
+        </div>
+      </div>
+
+      <!-- Gorjetas -->
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <span style="font-size:13px;display:flex;align-items:center;gap:6px">
+            <img src="icons/gift.svg" alt="" aria-hidden="true" style="width:14px;height:14px">
+            Gorjetas
+          </span>
+          <span style="font-size:13px;font-weight:700">R$ 220 (12%)</span>
+        </div>
+        <div style="height:6px;background:var(--color-bg-tertiary);border-radius:3px" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" aria-label="Gorjetas 12%">
+          <div style="height:100%;width:12%;background:#10B981;border-radius:3px"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Bottom nav (area do fa) -->
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>

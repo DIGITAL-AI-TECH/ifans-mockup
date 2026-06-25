@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ana Lima — ifans</title>
+  <meta name="robots" content="noindex">
+  <meta property="og:title" content="Ana Lima — Assine no ifans">
+  <meta property="og:description" content="Acesse conteúdo exclusivo de Ana Lima • 4.8k fãs • Fotografia e lifestyle">
+  <meta property="og:image" content="https://placehold.co/1200x630/442AC0/ffffff?text=Ana+Lima">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <style>
+    body { background: var(--color-bg-primary); color: var(--color-text-primary); font-family: var(--font-body); margin: 0; }
+    .checkout-page { max-width: 480px; margin: 0 auto; min-height: 100dvh; }
+  </style>
+</head>
+<body>
+<div class="checkout-page">
+
+  <!-- HEADER MÍNIMO -->
+  <header class="checkout-header">
+    <img src="logos/symbol-only.svg" alt="ifans" style="height:28px;">
+  </header>
+
+  <!-- HERO DO CREATOR -->
+  <div style="position:relative;">
+    <!-- Cover 3:1 -->
+    <div class="checkout-cover">
+      <!-- Gradiente simulando cover real -->
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a0533,#442AC0,#FD296C);opacity:0.7;"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--color-bg-primary));"></div>
+    </div>
+
+    <!-- Avatar + info -->
+    <div class="checkout-hero-info">
+      <div class="checkout-avatar" style="background:linear-gradient(135deg,#442AC0,#FD296C);">
+        A
+      </div>
+      <div style="padding-top:48px;">
+        <div class="checkout-creator-name">
+          Ana Lima
+          <span class="badge-verified" aria-label="Conta verificada">
+            <img src="icons/check.svg" alt="" aria-hidden="true">
+          </span>
+          <span class="badge-tier badge-creator" style="font-size:11px;padding:2px 8px;">Creator</span>
+        </div>
+        <div class="checkout-creator-handle">@analima</div>
+        <div class="checkout-creator-bio">Fotógrafa e criadora de conteúdo • Curitiba/PR • Fotografia mobile, lifestyle e moda 📸</div>
+        <div class="checkout-stats">
+          <div>
+            <div class="checkout-stat-value">4.8k</div>
+            <div class="checkout-stat-label">Fãs</div>
+          </div>
+          <div>
+            <div class="checkout-stat-value">142</div>
+            <div class="checkout-stat-label">Posts</div>
+          </div>
+          <div>
+            <div class="checkout-stat-value">★ 4.9</div>
+            <div class="checkout-stat-label">Avaliação</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIVISOR -->
+  <hr style="border:none;border-top:1px solid var(--color-border-subtle);margin:0;">
+
+  <!-- SEÇÃO: ASSINAR -->
+  <section class="checkout-section">
+    <div class="checkout-section-title">Escolha seu plano</div>
+    <div class="checkout-section-sub">Cancele quando quiser · PIX, cartão ou créditos</div>
+
+    <!-- Pill mensal/anual -->
+    <div class="checkout-period-tabs">
+      <button class="checkout-period-tab ativo" onclick="setPlano(this,'mensal')">Mensal</button>
+      <button class="checkout-period-tab" onclick="setPlano(this,'anual')">Anual <span style="font-size:10px;color:var(--color-brand-secondary);">-20%</span></button>
+    </div>
+
+    <!-- Cards de planos -->
+    <div class="checkout-plans">
+      <!-- Free -->
+      <div class="checkout-plan-card">
+        <div class="checkout-plan-name">Free</div>
+        <div class="checkout-plan-price">Grátis</div>
+        <div class="checkout-plan-period">para sempre</div>
+        <ul class="checkout-plan-features">
+          <li>Posts gratuitos</li>
+          <li>Seguir creator</li>
+          <li>Comentar</li>
+        </ul>
+        <button class="checkout-plan-btn checkout-plan-btn-ghost">Seguir</button>
+      </div>
+
+      <!-- Creator ★ Popular -->
+      <div class="checkout-plan-card popular">
+        <div class="checkout-plan-badge">MAIS POPULAR</div>
+        <div class="checkout-plan-name">Creator</div>
+        <div class="checkout-plan-price" id="price-creator">25 cr</div>
+        <div class="checkout-plan-period" id="period-creator">/mês</div>
+        <ul class="checkout-plan-features">
+          <li>Tudo do Free</li>
+          <li>Conteúdo exclusivo</li>
+          <li>DMs desbloqueados</li>
+          <li>Lives ao vivo</li>
+        </ul>
+        <button class="checkout-plan-btn checkout-plan-btn-primary">Assinar ▶</button>
+      </div>
+
+      <!-- VIP -->
+      <div class="checkout-plan-card">
+        <div class="checkout-plan-name">VIP</div>
+        <div class="checkout-plan-price" id="price-vip">75 cr</div>
+        <div class="checkout-plan-period" id="period-vip">/mês</div>
+        <ul class="checkout-plan-features">
+          <li>Tudo do Creator</li>
+          <li>Chat 1:1 direto</li>
+          <li>VIP live exclusiva</li>
+        </ul>
+        <button class="checkout-plan-btn checkout-plan-btn-vip">VIP ▶</button>
+      </div>
+    </div>
+
+    <!-- Info de pagamento -->
+    <p style="font-size:11px;color:var(--color-text-tertiary);text-align:center;margin:0 0 24px;">
+      <img src="icons/lock.svg" alt="" aria-hidden="true" style="width:12px;height:12px;filter:brightness(0) invert(0.5);vertical-align:middle;margin-right:3px;">
+      Pagamento seguro · LGPD · Cancele a qualquer momento
+    </p>
+  </section>
+
+  <!-- DIVISOR -->
+  <hr style="border:none;border-top:1px solid var(--color-border-subtle);margin:0;">
+
+  <!-- SEÇÃO: LOJA -->
+  <section class="checkout-section">
+    <div class="checkout-section-title">Loja — Produtos Avulsos</div>
+    <div class="checkout-section-sub">Compre uma vez, acesse para sempre</div>
+
+    <div class="checkout-products-grid">
+      <!-- Produto 1 -->
+      <div class="shop-product-card">
+        <div class="shop-product-thumb" style="background:linear-gradient(135deg,#442AC0,#9B7FFF);">
+          <span class="shop-product-type">Curso</span>
+        </div>
+        <div class="shop-product-info">
+          <div class="shop-product-name">Fotografia Mobile — Do Zero ao Pro</div>
+          <div class="shop-product-price">
+            <img src="icons/coins.svg" alt="créditos" aria-hidden="true">
+            300 cr
+          </div>
+          <button class="shop-product-buy">Comprar</button>
+        </div>
+      </div>
+
+      <!-- Produto 2 -->
+      <div class="shop-product-card">
+        <div class="shop-product-thumb" style="background:linear-gradient(135deg,#FD296C,#FF8FAB);">
+          <span class="shop-product-type">Pack</span>
+        </div>
+        <div class="shop-product-info">
+          <div class="shop-product-name">Pack Verão 2025 — 40 fotos</div>
+          <div class="shop-product-price">
+            <img src="icons/coins.svg" alt="créditos" aria-hidden="true">
+            150 cr
+          </div>
+          <button class="shop-product-buy">Comprar</button>
+        </div>
+      </div>
+
+      <!-- Produto 3 -->
+      <div class="shop-product-card">
+        <div class="shop-product-thumb" style="background:linear-gradient(135deg,#1B4332,#40916C);">
+          <span class="shop-product-type">Preset</span>
+        </div>
+        <div class="shop-product-info">
+          <div class="shop-product-name">Pack Presets Lightroom Moody</div>
+          <div class="shop-product-price">
+            <img src="icons/coins.svg" alt="créditos" aria-hidden="true">
+            80 cr
+          </div>
+          <button class="shop-product-buy">Comprar</button>
+        </div>
+      </div>
+
+      <!-- Ver todos -->
+      <div class="shop-product-card" style="display:flex;align-items:center;justify-content:center;cursor:pointer;">
+        <div style="text-align:center;padding:20px;">
+          <div style="font-size:28px;color:var(--color-brand-primary);margin-bottom:8px;">+</div>
+          <div style="font-size:12px;font-weight:600;color:var(--color-text-secondary);">Ver todos os produtos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="checkout-footer">
+    <div class="checkout-footer-links">
+      <a href="#">Termos</a>
+      <a href="#">Privacidade</a>
+      <a href="#">Suporte</a>
+    </div>
+    <a href="register.html" class="checkout-acquisition-cta">
+      <img src="logos/symbol-only.svg" alt="" aria-hidden="true" style="height:18px;">
+      Crie seu perfil no ifans →
+    </a>
+    <p style="font-size:11px;color:var(--color-text-tertiary);margin:12px 0 0;">© 2025 ifans · Plataforma de criadores independentes</p>
+  </footer>
+
+</div>
+
+<script>
+function setPlano(btn, tipo) {
+  document.querySelectorAll('.checkout-period-tab').forEach(function(b) { b.classList.remove('ativo'); });
+  btn.classList.add('ativo');
+  if (tipo === 'anual') {
+    document.getElementById('price-creator').textContent = '20 cr';
+    document.getElementById('period-creator').textContent = '/mês (anual)';
+    document.getElementById('price-vip').textContent = '60 cr';
+    document.getElementById('period-vip').textContent = '/mês (anual)';
+  } else {
+    document.getElementById('price-creator').textContent = '25 cr';
+    document.getElementById('period-creator').textContent = '/mês';
+    document.getElementById('price-vip').textContent = '75 cr';
+    document.getElementById('period-vip').textContent = '/mês';
+  }
+}
+</script>
+</body>
+</html>

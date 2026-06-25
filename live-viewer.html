@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ao Vivo — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <style>
+    /* ── Fullscreen viewer shell ── */
+    html, body { margin: 0; padding: 0; overflow: hidden; background: #000; height: 100%; }
+
+    .live-page {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Fundo simulado de transmissão */
+    .live-video {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 35%, rgba(68,42,192,0.4) 0%, transparent 55%),
+        radial-gradient(ellipse at 72% 65%, rgba(253,41,108,0.3) 0%, transparent 50%),
+        linear-gradient(180deg, #110B3A 0%, #0D0B1E 100%);
+    }
+    .live-video-silhouette {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 260px;
+      height: 380px;
+      background: radial-gradient(ellipse at 50% 30%, rgba(107,79,235,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Overlay */
+    .live-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      pointer-events: none;
+    }
+    .live-overlay > * { pointer-events: auto; }
+
+    /* Header */
+    .live-header {
+      display: flex;
+      align-items: center;
+      padding: calc(env(safe-area-inset-top, 12px) + 8px) 8px 8px;
+      gap: 6px;
+    }
+    .live-header-btn {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .live-header-btn img {
+      width: 22px;
+      height: 22px;
+      filter: brightness(0) invert(1);
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      background: #FD296C;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+    .live-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      animation: blink 1.2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .live-viewer-count {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 10px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .live-viewer-count img {
+      width: 14px;
+      height: 14px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Info criador no header */
+    .live-creator-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px 6px 6px;
+      background: rgba(0,0,0,0.45);
+      border-radius: 50px;
+      min-height: 44px;
+      flex: 1;
+      min-width: 0;
+    }
+    .live-creator-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #442AC0, #FD296C);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      border: 2px solid #FD296C;
+      flex-shrink: 0;
+    }
+    .live-creator-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+      min-width: 0;
+    }
+    .live-follow-btn {
+      padding: 5px 12px;
+      border-radius: 50px;
+      background: var(--color-brand-primary);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      min-height: 30px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .live-vip-badge {
+      padding: 5px 12px;
+      border-radius: 50px;
+      background: rgba(245,158,11,0.9);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      min-height: 30px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    /* Chat */
+    .live-chat {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 12px 8px;
+      pointer-events: none;
+    }
+    .live-chat-messages {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 200px;
+      overflow: hidden;
+    }
+    .live-chat-message {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 12px;
+      background: rgba(0,0,0,0.45);
+      border-radius: 50px;
+      width: fit-content;
+      max-width: 82%;
+    }
+    .live-chat-message img {
+      width: 14px;
+      height: 14px;
+    }
+    .live-chat-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: #B09EFD;
+      white-space: nowrap;
+    }
+    .live-chat-text {
+      font-size: 12px;
+      color: rgba(255,255,255,0.9);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 180px;
+    }
+
+    /* Footer fã */
+    .live-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px calc(env(safe-area-inset-bottom, 12px) + 12px);
+    }
+    .live-comment-input {
+      flex: 1;
+      height: 44px;
+      padding: 0 16px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    .live-comment-input::placeholder { color: rgba(255,255,255,0.5); }
+
+    .live-action-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    /* Ações laterais direita */
+    .live-actions-right {
+      position: absolute;
+      right: 12px;
+      bottom: calc(env(safe-area-inset-bottom, 12px) + 80px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .live-side-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      min-width: 44px;
+      min-height: 44px;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .live-side-btn img {
+      width: 28px;
+      height: 28px;
+      filter: brightness(0) invert(1);
+    }
+    .live-side-btn.liked img {
+      filter: none;
+    }
+    .live-side-count {
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;overflow:hidden;background:#000">
+<div class="live-page">
+
+  <!-- Fundo transmissão simulado -->
+  <div class="live-video">
+    <div class="live-video-silhouette"></div>
+  </div>
+
+  <div class="live-overlay">
+
+    <!-- Header viewer -->
+    <div class="live-header">
+      <!-- Voltar -->
+      <a href="feed.html" class="live-header-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true">
+      </a>
+
+      <!-- Info criadora + seguir / VIP -->
+      <div class="live-creator-pill">
+        <div class="live-creator-avatar">A</div>
+        <span class="live-creator-name">Ana Artista</span>
+        <div class="live-vip-badge">
+          <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:12px;height:12px;filter:brightness(0) invert(1)">
+          VIP
+        </div>
+      </div>
+
+      <!-- Badge AO VIVO -->
+      <span class="live-badge">AO VIVO</span>
+
+      <!-- Viewers -->
+      <div class="live-viewer-count">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+        1.247
+      </div>
+    </div>
+
+    <!-- Chat ao vivo -->
+    <div class="live-chat" aria-live="polite" aria-label="Chat ao vivo">
+      <div class="live-chat-messages">
+
+        <div class="live-chat-message">
+          <span class="live-chat-name">julia_r</span>
+          <span class="live-chat-text">adorando a live!</span>
+        </div>
+
+        <div class="live-chat-message">
+          <span class="live-chat-name">marcos_d</span>
+          <span class="live-chat-text">que luz incrivel hoje</span>
+        </div>
+
+        <div class="live-chat-message" style="background:rgba(253,41,108,0.35)">
+          <img src="icons/gift.svg" alt="" aria-hidden="true" style="width:14px;height:14px;filter:brightness(0) invert(1)">
+          <span class="live-chat-name" style="color:#FF91BB">fan_especial</span>
+          <span class="live-chat-text">enviou 50 creditos</span>
+        </div>
+
+        <div class="live-chat-message">
+          <span class="live-chat-name">carol_s</span>
+          <span class="live-chat-text">quando vai postar o ensaio?</span>
+        </div>
+
+        <div class="live-chat-message">
+          <span class="live-chat-name">pedro_m</span>
+          <span class="live-chat-text">faz a dancinha de novo!</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer fã: input de chat + like + gorjeta -->
+    <div class="live-footer">
+      <input type="text" placeholder="Comentar..." class="live-comment-input" aria-label="Comentar na live">
+      <button class="live-action-btn" aria-label="Curtir" style="background:rgba(253,41,108,0.2);border-color:rgba(253,41,108,0.3)">
+        <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:22px;height:22px;filter:none;-webkit-filter:none" onerror="this.style.filter='invert(40%) sepia(90%) saturate(500%) hue-rotate(300deg)'">
+      </button>
+      <button class="live-action-btn" aria-label="Enviar gorjeta">
+        <img src="icons/gift.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Ações laterais viewer (direita) -->
+  <div class="live-actions-right">
+
+    <div class="live-side-btn liked" role="button" tabindex="0" aria-label="Curtidas: 4.2 mil" aria-pressed="true">
+      <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:28px;height:28px;filter:invert(30%) sepia(90%) saturate(600%) hue-rotate(300deg) brightness(1.2)">
+      <span class="live-side-count" style="color:#FD296C">4.2k</span>
+    </div>
+
+    <div class="live-side-btn" role="button" tabindex="0" aria-label="Comentar">
+      <img src="icons/message.svg" alt="" aria-hidden="true">
+      <span class="live-side-count">Chat</span>
+    </div>
+
+    <div class="live-side-btn" role="button" tabindex="0" aria-label="Enviar gorjeta">
+      <img src="icons/gift.svg" alt="" aria-hidden="true">
+      <span class="live-side-count">Gorjeta</span>
+    </div>
+
+    <div class="live-side-btn" role="button" tabindex="0" aria-label="Compartilhar live">
+      <img src="icons/share.svg" alt="" aria-hidden="true">
+      <span class="live-side-count">Enviar</span>
+    </div>
+
+    <div class="live-side-btn" role="button" tabindex="0" aria-label="Seguir criadora">
+      <div style="width:44px;height:44px;border-radius:50%;background:var(--color-brand-primary);display:flex;align-items:center;justify-content:center">
+        <img src="icons/plus.svg" alt="" aria-hidden="true" style="width:22px;height:22px;filter:brightness(0) invert(1)">
+      </div>
+      <span class="live-side-count">Seguir</span>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>

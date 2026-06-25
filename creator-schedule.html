@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Agendamento — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <style>
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      padding: 0 16px 16px;
+    }
+    .cal-weekday {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--color-text-tertiary);
+      padding: 4px 0;
+    }
+    .cal-day {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1/1;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      cursor: pointer;
+    }
+    .cal-day.today {
+      background: var(--color-brand-primary);
+      color: #fff;
+      font-weight: 700;
+    }
+    .cal-day.has-post::after {
+      content: '';
+      position: absolute;
+      bottom: 3px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #FD296C;
+    }
+    .cal-day.today.has-post::after {
+      background: rgba(255,255,255,0.8);
+    }
+    .cal-day.empty {
+      color: transparent;
+      pointer-events: none;
+    }
+    .cal-day:hover:not(.today):not(.empty) {
+      background: var(--color-bg-tertiary);
+    }
+    .scheduled-thumb {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #281A80, #110B3A);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .fab {
+      position: fixed;
+      bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #442AC0, #FD296C);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(68,42,192,0.45);
+      z-index: 90;
+    }
+  </style>
+</head>
+<body>
+<div class="creator-page">
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="creator-dashboard.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+      </a>
+      <span class="header-title">Agendamento</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <nav class="creator-top-nav" role="navigation">
+    <a href="creator-dashboard.html" class="creator-top-nav-item"><img src="icons/bar-chart.svg" alt="" aria-hidden="true"> Dashboard</a>
+    <a href="creator-new-post.html" class="creator-top-nav-item"><img src="icons/camera.svg" alt="" aria-hidden="true"> Novo Post</a>
+    <a href="creator-analytics.html" class="creator-top-nav-item"><img src="icons/bar-chart.svg" alt="" aria-hidden="true"> Analytics</a>
+    <a href="creator-subscribers.html" class="creator-top-nav-item"><img src="icons/crown.svg" alt="" aria-hidden="true"> Assinantes</a>
+    <a href="creator-tools.html" class="creator-top-nav-item"><img src="icons/settings.svg" alt="" aria-hidden="true"> Ferramentas</a>
+    <a href="creator-wallet.html" class="creator-top-nav-item"><img src="icons/coins.svg" alt="" aria-hidden="true"> Carteira</a>
+    <a href="creator-schedule.html" class="creator-top-nav-item ativo"><img src="icons/calendar.svg" alt="" aria-hidden="true"> Agenda</a>
+    <a href="creator-broadcast.html" class="creator-top-nav-item"><img src="icons/send.svg" alt="" aria-hidden="true"> Broadcast</a>
+  </nav>
+
+  <main class="creator-page-content">
+
+    <!-- Cabeçalho calendário -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 16px 12px">
+      <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Mês anterior">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.6">
+      </button>
+      <span style="font-size:16px;font-weight:700">Junho 2026</span>
+      <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Próximo mês">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:20px;height:20px;opacity:0.6">
+      </button>
+    </div>
+
+    <!-- Dias da semana -->
+    <div class="cal-grid">
+      <div class="cal-weekday">Dom</div>
+      <div class="cal-weekday">Seg</div>
+      <div class="cal-weekday">Ter</div>
+      <div class="cal-weekday">Qua</div>
+      <div class="cal-weekday">Qui</div>
+      <div class="cal-weekday">Sex</div>
+      <div class="cal-weekday">Sáb</div>
+
+      <!-- Junho 2026 começa em Segunda (offset 1) -->
+      <div class="cal-day empty"></div>
+      <div class="cal-day">1</div>
+      <div class="cal-day has-post">2</div>
+      <div class="cal-day">3</div>
+      <div class="cal-day">4</div>
+      <div class="cal-day has-post">5</div>
+      <div class="cal-day">6</div>
+
+      <div class="cal-day">7</div>
+      <div class="cal-day">8</div>
+      <div class="cal-day has-post">9</div>
+      <div class="cal-day">10</div>
+      <div class="cal-day">11</div>
+      <div class="cal-day has-post">12</div>
+      <div class="cal-day">13</div>
+
+      <div class="cal-day">14</div>
+      <div class="cal-day has-post">15</div>
+      <div class="cal-day">16</div>
+      <div class="cal-day">17</div>
+      <div class="cal-day">18</div>
+      <div class="cal-day has-post">19</div>
+      <div class="cal-day">20</div>
+
+      <div class="cal-day">21</div>
+      <div class="cal-day">22</div>
+      <div class="cal-day">23</div>
+      <div class="cal-day today has-post">24</div>
+      <div class="cal-day has-post">25</div>
+      <div class="cal-day">26</div>
+      <div class="cal-day">27</div>
+
+      <div class="cal-day">28</div>
+      <div class="cal-day">29</div>
+      <div class="cal-day">30</div>
+    </div>
+
+    <!-- Legenda -->
+    <div style="display:flex;align-items:center;gap:6px;padding:0 16px 16px">
+      <div style="width:8px;height:8px;border-radius:50%;background:#FD296C;flex-shrink:0"></div>
+      <span style="font-size:12px;color:var(--color-text-tertiary)">Post agendado</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Próximos posts -->
+    <div class="section-header">
+      <span class="section-title">Próximos posts agendados</span>
+      <span style="font-size:13px;color:var(--color-text-tertiary)">4 posts</span>
+    </div>
+
+    <!-- Post 1 -->
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)">
+      <div class="scheduled-thumb" style="background:linear-gradient(135deg,#442AC0,#FD296C)"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Ensaio — Coleção Verão</div>
+        <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">
+          <span style="font-weight:600;color:var(--color-text-secondary)">Hoje</span> · 20:00 · Foto
+        </div>
+        <div style="display:flex;align-items:center;gap:4px;margin-top:4px">
+          <span style="font-size:11px;padding:2px 8px;background:rgba(253,41,108,0.15);color:#FD296C;border-radius:4px;font-weight:600">Creator</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:4px;flex-shrink:0">
+        <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Editar post">
+          <img src="icons/settings.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.5">
+        </button>
+        <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Excluir post">
+          <img src="icons/x.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.5">
+        </button>
+      </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)">
+      <div class="scheduled-thumb" style="background:linear-gradient(135deg,#1B1158,#281A80)"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">BTS do estúdio — making of</div>
+        <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">25 jun · 18:30 · Vídeo</div>
+        <div style="display:flex;align-items:center;gap:4px;margin-top:4px">
+          <span style="font-size:11px;padding:2px 8px;background:rgba(107,79,235,0.15);color:#6B4FEB;border-radius:4px;font-weight:600">Premium</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:4px;flex-shrink:0">
+        <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Editar post">
+          <img src="icons/settings.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.5">
+        </button>
+        <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Excluir post">
+          <img src="icons/x.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.5">
+        </button>
+      </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)">
+      <div class="scheduled-thumb" style="background:linear-gradient(135deg,#3A0416,#FD296C)"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Reel — dança nova coreografia</div>
+        <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">27 jun · 21:00 · Reel</div>
+        <div style="display:flex;align-items:center;gap:4px;margin-top:4px">
+          <span style="font-size:11px;padding:2px 8px;background:rgba(0,0,0,0.3);color:var(--color-text-tertiary);border-radius:4px;font-weight:600">Grátis</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:4px;flex-shrink:0">
+        <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Editar post">
+          <img src="icons/settings.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.5">
+        </button>
+        <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Excluir post">
+          <img src="icons/x.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.5">
+        </button>
+      </div>
+    </div>
+
+    <!-- Post 4 -->
+    <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;margin-bottom:32px">
+      <div class="scheduled-thumb" style="background:linear-gradient(135deg,#110B3A,#442AC0)"></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Galeria exclusiva — Julho</div>
+        <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">30 jun · 12:00 · Galeria</div>
+        <div style="display:flex;align-items:center;gap:4px;margin-top:4px">
+          <span style="font-size:11px;padding:2px 8px;background:rgba(245,158,11,0.15);color:#F59E0B;border-radius:4px;font-weight:600">VIP</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:4px;flex-shrink:0">
+        <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Editar post">
+          <img src="icons/settings.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.5">
+        </button>
+        <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Excluir post">
+          <img src="icons/x.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.5">
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FAB agendar -->
+  <a href="creator-new-post.html" class="fab" aria-label="Agendar post">
+    <img src="icons/plus.svg" alt="" aria-hidden="true" style="width:24px;height:24px;filter:brightness(0) invert(1)">
+  </a>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Assinantes — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="creator-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="creator-dashboard.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:24px;height:24px">
+      </a>
+      <span class="header-title">Assinantes (247)</span>
+      <button class="header-action-btn" aria-label="Filtrar assinantes">
+        <img src="icons/settings.svg" alt="" aria-hidden="true">
+      </button>
+    </div>
+  </header>
+
+  <!-- Creator top nav -->
+  <nav class="creator-top-nav" role="navigation" aria-label="Navegacao do criador">
+    <a href="creator-dashboard.html" class="creator-top-nav-item">
+      <img src="icons/bar-chart.svg" alt="" aria-hidden="true">
+      Dashboard
+    </a>
+    <a href="creator-new-post.html" class="creator-top-nav-item">
+      <img src="icons/camera.svg" alt="" aria-hidden="true">
+      Novo Post
+    </a>
+    <a href="creator-analytics.html" class="creator-top-nav-item">
+      <img src="icons/bar-chart.svg" alt="" aria-hidden="true">
+      Analytics
+    </a>
+    <a href="creator-subscribers.html" class="creator-top-nav-item ativo">
+      <img src="icons/crown.svg" alt="" aria-hidden="true">
+      Assinantes
+    </a>
+    <a href="creator-tools.html" class="creator-top-nav-item">
+      <img src="icons/settings.svg" alt="" aria-hidden="true">
+      Ferramentas
+    </a>
+  </nav>
+
+  <main class="creator-page-content">
+
+    <!-- Filtros de tier -->
+    <div style="display:flex;gap:8px;overflow-x:auto;padding:8px 16px 12px;scrollbar-width:none" role="group" aria-label="Filtrar por tier">
+      <button style="padding:6px 14px;border-radius:50px;background:var(--color-brand-primary);color:#fff;font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0;min-height:36px" aria-pressed="true">Todos (247)</button>
+      <button style="padding:6px 14px;border-radius:50px;background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0;border:1px solid var(--color-border-default);min-height:36px" aria-pressed="false">Creator (180)</button>
+      <button style="padding:6px 14px;border-radius:50px;background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0;border:1px solid var(--color-border-default);min-height:36px" aria-pressed="false">Premium (52)</button>
+      <button style="padding:6px 14px;border-radius:50px;background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0;border:1px solid var(--color-border-default);min-height:36px" aria-pressed="false">VIP (15)</button>
+    </div>
+
+    <!-- Barra de busca -->
+    <div class="search-bar">
+      <div class="search-input-wrap">
+        <div class="search-input-icon">
+          <img src="icons/search.svg" alt="" aria-hidden="true" style="width:18px;height:18px">
+        </div>
+        <input type="search" class="search-input" placeholder="Buscar assinante..." aria-label="Buscar assinante">
+      </div>
+    </div>
+
+    <!-- Lista de assinantes -->
+    <div style="display:flex;flex-direction:column" role="list" aria-label="Lista de assinantes">
+
+      <!-- Assinante VIP -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)" role="listitem">
+        <div class="avatar-initials avatar-md ring-vip" style="font-size:16px;background:#B45309">P</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:700">Pedro Mendes</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">@pedromendes &bull; VIP &bull; desde jan 2026</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:14px;font-weight:700;color:#F59E0B">75 cr/mes</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">6 meses</div>
+        </div>
+      </div>
+
+      <!-- Assinante VIP 2 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)" role="listitem">
+        <div class="avatar-initials avatar-md ring-vip" style="font-size:16px;background:#92400E">C</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:700">Carla Souza</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">@carlasouza &bull; VIP &bull; desde dez 2025</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:14px;font-weight:700;color:#F59E0B">75 cr/mes</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">7 meses</div>
+        </div>
+      </div>
+
+      <!-- Assinante Premium -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)" role="listitem">
+        <div class="avatar-initials avatar-md ring-premium" style="font-size:16px;background:#3B0764">R</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:700">Rafael Costa</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">@rafaelcosta &bull; Premium &bull; desde fev 2026</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:14px;font-weight:700;color:#6B4FEB">40 cr/mes</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">5 meses</div>
+        </div>
+      </div>
+
+      <!-- Assinante Premium 2 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)" role="listitem">
+        <div class="avatar-initials avatar-md ring-premium" style="font-size:16px;background:#4C1D95">J</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:700">Julia Ferreira</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">@juliaferreira &bull; Premium &bull; desde mar 2026</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:14px;font-weight:700;color:#6B4FEB">40 cr/mes</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">4 meses</div>
+        </div>
+      </div>
+
+      <!-- Assinante Creator -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)" role="listitem">
+        <div class="avatar-initials avatar-md ring-creator" style="font-size:16px;background:#881337">M</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:700">Marcos Lima</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">@marcoslima &bull; Creator &bull; desde abr 2026</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:14px;font-weight:700;color:#FD296C">20 cr/mes</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">3 meses</div>
+        </div>
+      </div>
+
+      <!-- Assinante Creator 2 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--color-border-subtle)" role="listitem">
+        <div class="avatar-initials avatar-md ring-creator" style="font-size:16px;background:#9D174D">F</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:700">Fernanda Dias</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">@fernandadias &bull; Creator &bull; desde mai 2026</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:14px;font-weight:700;color:#FD296C">20 cr/mes</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">2 meses</div>
+        </div>
+      </div>
+
+      <!-- Assinante Creator 3 -->
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 16px" role="listitem">
+        <div class="avatar-initials avatar-md ring-creator" style="font-size:16px;background:#7C2D12">L</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:700">Lucas Alves</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">@lucasalves &bull; Creator &bull; desde jun 2026</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:14px;font-weight:700;color:#FD296C">20 cr/mes</div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:2px">1 mes</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Sumario de receita por tier -->
+    <div style="padding:16px">
+      <div class="section-title" style="margin-bottom:12px">Receita por Tier</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+
+        <!-- Creator tier -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:var(--color-bg-secondary);border-radius:12px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(253,41,108,0.15);display:flex;align-items:center;justify-content:center">
+              <img src="icons/user.svg" alt="" aria-hidden="true" style="width:18px;height:18px">
+            </div>
+            <div>
+              <div style="font-size:13px;font-weight:700">Creator</div>
+              <div style="font-size:11px;color:var(--color-text-tertiary)">180 assinantes</div>
+            </div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:14px;font-weight:700;color:#FD296C">R$ 720/mes</div>
+            <div style="font-size:11px;color:var(--color-text-tertiary)">20 cr cada</div>
+          </div>
+        </div>
+
+        <!-- Premium tier -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:var(--color-bg-secondary);border-radius:12px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(107,79,235,0.15);display:flex;align-items:center;justify-content:center">
+              <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:18px;height:18px">
+            </div>
+            <div>
+              <div style="font-size:13px;font-weight:700">Premium</div>
+              <div style="font-size:11px;color:var(--color-text-tertiary)">52 assinantes</div>
+            </div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:14px;font-weight:700;color:#6B4FEB">R$ 416/mes</div>
+            <div style="font-size:11px;color:var(--color-text-tertiary)">40 cr cada</div>
+          </div>
+        </div>
+
+        <!-- VIP tier -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:var(--color-bg-secondary);border-radius:12px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(245,158,11,0.15);display:flex;align-items:center;justify-content:center">
+              <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:18px;height:18px">
+            </div>
+            <div>
+              <div style="font-size:13px;font-weight:700">VIP</div>
+              <div style="font-size:11px;color:var(--color-text-tertiary)">15 assinantes</div>
+            </div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:14px;font-weight:700;color:#F59E0B">R$ 225/mes</div>
+            <div style="font-size:11px;color:var(--color-text-tertiary)">75 cr cada</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Bottom nav (area do fa) -->
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>

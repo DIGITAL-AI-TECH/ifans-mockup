@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Story — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <style>
+    /* Story viewer — estilos especificos */
+    .story-viewer {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 50;
+      overflow: hidden;
+      touch-action: none;
+    }
+
+    .story-progress-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      gap: 4px;
+      padding: calc(env(safe-area-inset-top, 12px) + 8px) 12px 8px;
+    }
+
+    .story-progress-segment {
+      flex: 1;
+      height: 2px;
+      background: rgba(255,255,255,0.35);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .story-progress-fill {
+      height: 100%;
+      background: #fff;
+      border-radius: 2px;
+      width: 0%;
+    }
+
+    .story-progress-fill.done {
+      width: 100%;
+    }
+
+    .story-progress-fill.active {
+      width: 45%;
+      animation: story-progress 5s linear forwards;
+    }
+
+    @keyframes story-progress {
+      from { width: 0%; }
+      to   { width: 100%; }
+    }
+
+    .story-viewer-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: calc(env(safe-area-inset-top, 12px) + 20px) 8px 8px 12px;
+    }
+  </style>
+</head>
+<body style="background:#000;overflow:hidden">
+
+<div class="story-viewer" role="region" aria-label="Story de Ana Lima">
+
+  <!-- Barras de progresso -->
+  <div class="story-progress-bar" aria-hidden="true">
+    <div class="story-progress-segment"><div class="story-progress-fill done"></div></div>
+    <div class="story-progress-segment"><div class="story-progress-fill active"></div></div>
+    <div class="story-progress-segment"><div class="story-progress-fill"></div></div>
+    <div class="story-progress-segment"><div class="story-progress-fill"></div></div>
+  </div>
+
+  <!-- Header da story -->
+  <div class="story-viewer-header">
+    <div class="avatar-initials avatar-sm ring-creator" style="font-size:12px;flex-shrink:0">A</div>
+    <div style="flex:1">
+      <div style="font-size:13px;font-weight:700;color:#fff">Ana Lima</div>
+      <div style="font-size:11px;color:rgba(255,255,255,0.6)">ha 3h</div>
+    </div>
+    <a href="feed.html" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Fechar story">
+      <img src="icons/x.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+    </a>
+    <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center" aria-label="Mais opcoes">
+      <img src="icons/ellipsis-h.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+    </button>
+  </div>
+
+  <!-- Media da story (background) -->
+  <div style="position:absolute;inset:0;background:linear-gradient(160deg,#442AC0,#FD296C,#0D0B1E)" aria-hidden="true"></div>
+
+  <!-- Elemento decorativo -->
+  <div style="position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center" aria-hidden="true">
+    <img src="icons/camera.svg" alt="" aria-hidden="true" style="width:48px;height:48px;filter:brightness(0) invert(1);opacity:0.4">
+  </div>
+
+  <!-- Texto da story sobreposto -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;padding:0 24px;width:100%">
+    <p style="font-size:22px;font-weight:800;color:#fff;line-height:1.3;text-shadow:0 2px 8px rgba(0,0,0,0.4)">Novo ensaio chegando amanha!</p>
+    <p style="font-size:14px;color:rgba(255,255,255,0.7);margin-top:8px">Vai ser incrivel, fiquem atentos</p>
+  </div>
+
+  <!-- Sticker de interacao (apenas visual) -->
+  <div style="position:absolute;bottom:180px;left:50%;transform:translateX(-50%)">
+    <div style="padding:10px 20px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border-radius:50px;border:1.5px solid rgba(255,255,255,0.3);display:flex;align-items:center;gap:8px;white-space:nowrap">
+      <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:brightness(0) invert(1)">
+      <span style="font-size:14px;font-weight:700;color:#fff">Curtir este post</span>
+    </div>
+  </div>
+
+  <!-- Rodape da story — reply input -->
+  <div style="position:absolute;bottom:0;left:0;right:0;padding:8px 16px calc(20px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:8px;background:linear-gradient(to top,rgba(0,0,0,0.5),transparent)">
+    <input
+      type="text"
+      placeholder="Responder a Ana Lima..."
+      style="flex:1;height:40px;padding:0 14px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);border-radius:50px;color:#fff;font-size:14px;outline:none"
+      aria-label="Responder a story"
+    >
+    <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,0.1)" aria-label="Curtir story">
+      <img src="icons/heart.svg" alt="" aria-hidden="true" style="width:24px;height:24px;filter:brightness(0) invert(1)">
+    </button>
+    <button style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,0.1)" aria-label="Enviar mensagem">
+      <img src="icons/send.svg" alt="" aria-hidden="true" style="width:24px;height:24px;filter:brightness(0) invert(1)">
+    </button>
+  </div>
+
+  <!-- Tap zones invisíveis para navegar entre stories -->
+  <button
+    style="position:absolute;top:60px;left:0;width:40%;height:calc(100% - 60px - 80px);background:transparent"
+    aria-label="Story anterior"
+  ></button>
+  <button
+    style="position:absolute;top:60px;right:0;width:60%;height:calc(100% - 60px - 80px);background:transparent"
+    aria-label="Proxima story"
+  ></button>
+
+</div>
+
+</body>
+</html>

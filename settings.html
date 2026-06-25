@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Configurações — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      <a href="profile.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+      </a>
+      <span class="header-title">Configurações</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <main class="page-content">
+
+    <!-- Perfil resumido -->
+    <div style="padding:16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--color-border-subtle)">
+      <div class="avatar-initials avatar-lg" style="font-size:22px;flex-shrink:0">M</div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:16px;font-weight:700">Matheus Terra</div>
+        <div style="font-size:13px;color:var(--color-text-tertiary)">@matheusterra</div>
+      </div>
+      <a href="#" style="font-size:13px;font-weight:600;color:var(--color-brand-primary);flex-shrink:0;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:flex-end">
+        Editar
+      </a>
+    </div>
+
+    <!-- Seção: Conta -->
+    <div class="settings-section-title">Conta</div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:var(--color-brand-primary)">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Informações pessoais</span>
+      <div class="settings-item-arrow">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+      </div>
+    </div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:#10B981">
+        <img src="icons/coins.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Carteira e pagamentos</span>
+      <div class="settings-item-arrow">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+      </div>
+    </div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:#6B4FEB">
+        <img src="icons/lock.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Privacidade e segurança</span>
+      <div class="settings-item-arrow">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+      </div>
+    </div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:#3B82F6">
+        <img src="icons/at-sign.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Usuário e handle</span>
+      <div class="settings-item-arrow">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+      </div>
+    </div>
+
+    <!-- Seção: Preferências -->
+    <div class="settings-section-title">Preferências</div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:#374151">
+        <img src="icons/bell.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Notificações</span>
+      <div class="settings-item-arrow">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+      </div>
+    </div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:#374151">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Modo escuro</span>
+      <div class="settings-toggle on" onclick="this.classList.toggle('on')"
+        role="switch" aria-checked="true" aria-label="Modo escuro"></div>
+    </div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:#374151">
+        <img src="icons/share.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Idioma</span>
+      <div style="display:flex;align-items:center;gap:6px">
+        <span style="font-size:13px;color:var(--color-text-tertiary)">Português</span>
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px;opacity:0.4">
+      </div>
+    </div>
+
+    <!-- Seção: Suporte -->
+    <div class="settings-section-title">Suporte</div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:#3B82F6">
+        <img src="icons/message.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Central de ajuda</span>
+      <div class="settings-item-arrow">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+      </div>
+    </div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:#374151">
+        <img src="icons/send.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Fale conosco</span>
+      <div class="settings-item-arrow">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+      </div>
+    </div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:#374151">
+        <img src="icons/bar-chart.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Termos e políticas</span>
+      <div class="settings-item-arrow">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+      </div>
+    </div>
+
+    <!-- Seção: Área do Criador -->
+    <div class="settings-section-title">Área do Criador</div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:linear-gradient(135deg,#442AC0,#FD296C)">
+        <img src="icons/crown.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Dashboard do Criador</span>
+      <div class="settings-item-arrow">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+      </div>
+    </div>
+
+    <div class="settings-item">
+      <div class="settings-item-icon" style="background:linear-gradient(135deg,#FD296C,#3422A0)">
+        <img src="icons/coins.svg" alt="" aria-hidden="true">
+      </div>
+      <span class="settings-item-label">Monetização</span>
+      <div class="settings-item-arrow">
+        <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+      </div>
+    </div>
+
+    <!-- Botão sair -->
+    <div style="padding:24px 16px">
+      <button class="btn btn-full"
+        style="background:rgba(253,41,108,0.08);color:#FD296C;min-height:48px;border:1px solid rgba(253,41,108,0.2)">
+        <img src="icons/x.svg" alt="" aria-hidden="true"
+          style="width:18px;height:18px;filter:invert(27%) sepia(99%) saturate(1700%) hue-rotate(308deg)">
+        Sair da conta
+      </button>
+    </div>
+
+    <!-- Versão do app -->
+    <div style="text-align:center;padding-bottom:24px">
+      <p style="font-size:11px;color:var(--color-text-tertiary)">ifans v1.0.0</p>
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+</div>
+</body>
+</html>

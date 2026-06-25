@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Criar conta — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="page-public">
+
+  <!-- Header com voltar + titulo -->
+  <header style="height:56px;display:flex;align-items:center;padding:0 8px 0 4px;border-bottom:1px solid var(--color-border-subtle);position:sticky;top:0;z-index:100;background:var(--color-bg-primary)">
+    <a href="index.html" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;color:var(--color-text-primary)" aria-label="Voltar">
+      <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:22px;height:22px;opacity:0.8">
+    </a>
+    <span style="font-size:17px;font-weight:700;flex:1;text-align:center">Criar conta</span>
+    <!-- Spacer para centralizar o titulo -->
+    <div style="width:44px"></div>
+  </header>
+
+  <!-- Formulario de cadastro -->
+  <main style="padding:28px 24px 60px;max-width:480px;margin:0 auto">
+
+    <div style="text-align:center;margin-bottom:28px">
+      <img src="logos/symbol-only.svg" alt="" aria-hidden="true" style="width:48px;height:48px;margin:0 auto 12px">
+      <p style="font-size:14px;color:var(--color-text-tertiary)">Junte-se a 12 mil criadores na ifans</p>
+    </div>
+
+    <form action="feed.html" method="get">
+
+      <!-- Nome completo -->
+      <div class="form-group">
+        <label class="form-label" for="nome">Nome completo</label>
+        <div style="position:relative">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);display:flex;align-items:center;pointer-events:none">
+            <img src="icons/user.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.4">
+          </span>
+          <input
+            id="nome"
+            type="text"
+            name="nome"
+            class="form-input"
+            placeholder="Seu nome"
+            autocomplete="name"
+            style="padding-left:42px"
+          >
+        </div>
+      </div>
+
+      <!-- Usuario / Handle -->
+      <div class="form-group">
+        <label class="form-label" for="usuario">Nome de usuario</label>
+        <div style="position:relative">
+          <span style="position:absolute;left:0;top:0;bottom:0;width:42px;display:flex;align-items:center;justify-content:center;background:var(--color-bg-tertiary);border:1px solid var(--color-border-default);border-right:none;border-radius:12px 0 0 12px;font-size:15px;font-weight:700;color:var(--color-text-tertiary);pointer-events:none">@</span>
+          <input
+            id="usuario"
+            type="text"
+            name="usuario"
+            class="form-input"
+            placeholder="seuusuario"
+            autocomplete="username"
+            style="padding-left:50px;border-radius:0 12px 12px 0"
+          >
+        </div>
+        <p style="font-size:11px;color:var(--color-text-tertiary);margin-top:4px">Sera seu link publico: ifans.click/@seuusuario</p>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label class="form-label" for="email">E-mail</label>
+        <div style="position:relative">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);display:flex;align-items:center;pointer-events:none">
+            <img src="icons/at-sign.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.4">
+          </span>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            class="form-input"
+            placeholder="seu@email.com"
+            autocomplete="email"
+            style="padding-left:42px"
+          >
+        </div>
+      </div>
+
+      <!-- Senha -->
+      <div class="form-group">
+        <label class="form-label" for="senha">Senha</label>
+        <div style="position:relative">
+          <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);display:flex;align-items:center;pointer-events:none">
+            <img src="icons/lock.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.4">
+          </span>
+          <input
+            id="senha"
+            type="password"
+            name="senha"
+            class="form-input"
+            placeholder="Minimo 8 caracteres"
+            autocomplete="new-password"
+            style="padding-left:42px"
+          >
+        </div>
+      </div>
+
+      <!-- Toggle criador -->
+      <div style="display:flex;align-items:center;gap:14px;padding:16px;background:var(--color-bg-secondary);border-radius:16px;border:1px solid var(--color-border-default);margin-bottom:24px;cursor:pointer" onclick="this.classList.toggle('active');var cb=this.querySelector('input');cb.checked=!cb.checked;var toggle=this.querySelector('.toggle-track');toggle.classList.toggle('on')">
+        <div style="width:44px;height:44px;border-radius:12px;background:rgba(68,42,192,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:22px;height:22px;filter:brightness(0) saturate(100%) invert(26%) sepia(89%) saturate(2389%) hue-rotate(241deg) brightness(120%)">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:14px;font-weight:700;margin-bottom:2px">Sou criador de conteudo</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">Ative para acessar ferramentas de monetizacao</div>
+        </div>
+        <div class="settings-toggle toggle-track" aria-hidden="true"></div>
+        <input type="checkbox" name="creator" style="position:absolute;opacity:0;pointer-events:none" aria-label="Sou criador de conteudo">
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-full btn-lg">
+        <img src="icons/check.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:brightness(0) invert(1)">
+        Criar conta
+      </button>
+
+    </form>
+
+    <!-- Link login -->
+    <p style="text-align:center;font-size:14px;color:var(--color-text-tertiary);margin-top:24px">
+      Ja tem conta?
+      <a href="login.html" style="color:var(--color-text-brand);font-weight:700">Entrar</a>
+    </p>
+
+    <!-- Termos -->
+    <p style="font-size:12px;color:var(--color-text-tertiary);text-align:center;margin-top:16px;line-height:1.6">
+      Ao criar conta voce concorda com os
+      <a href="#" style="color:var(--color-text-secondary);text-decoration:underline">Termos de Uso</a>
+      e a
+      <a href="#" style="color:var(--color-text-secondary);text-decoration:underline">Politica de Privacidade</a>.
+    </p>
+
+  </main>
+
+</div>
+</body>
+</html>

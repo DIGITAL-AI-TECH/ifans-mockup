@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Novo Post — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="creator-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="creator-dashboard.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:24px;height:24px">
+      </a>
+      <span class="header-title">Novo Post</span>
+      <button style="padding:0 12px;height:44px;background:none;font-size:15px;font-weight:700;color:var(--color-brand-primary)">
+        Publicar
+      </button>
+    </div>
+  </header>
+
+  <!-- Creator top nav -->
+  <nav class="creator-top-nav" role="navigation" aria-label="Navegação do criador">
+    <a href="creator-dashboard.html" class="creator-top-nav-item">
+      <img src="icons/bar-chart.svg" alt="" aria-hidden="true">
+      Dashboard
+    </a>
+    <a href="creator-new-post.html" class="creator-top-nav-item ativo">
+      <img src="icons/camera.svg" alt="" aria-hidden="true">
+      Novo Post
+    </a>
+    <a href="creator-analytics.html" class="creator-top-nav-item">
+      <img src="icons/bar-chart.svg" alt="" aria-hidden="true">
+      Analytics
+    </a>
+    <a href="creator-subscribers.html" class="creator-top-nav-item">
+      <img src="icons/crown.svg" alt="" aria-hidden="true">
+      Assinantes
+    </a>
+    <a href="creator-tools.html" class="creator-top-nav-item">
+      <img src="icons/settings.svg" alt="" aria-hidden="true">
+      Ferramentas
+    </a>
+  </nav>
+
+  <main class="creator-page-content">
+
+    <!-- Upload area -->
+    <div style="padding:16px">
+      <div class="upload-area" role="button" tabindex="0" aria-label="Selecionar foto ou video">
+        <img src="icons/camera.svg" alt="" aria-hidden="true" style="width:40px;height:40px;opacity:0.5">
+        <p class="upload-area-text">Toque para adicionar <strong>foto ou video</strong></p>
+        <p style="font-size:11px;color:var(--color-text-tertiary)">JPG, PNG, MP4 &bull; Max. 100MB</p>
+      </div>
+    </div>
+
+    <!-- Formulario -->
+    <div style="padding:0 16px">
+
+      <!-- Legenda -->
+      <div class="form-group">
+        <label class="form-label" for="post-caption">Legenda</label>
+        <textarea id="post-caption" class="form-input form-textarea" placeholder="Escreva algo sobre o seu post..." rows="4"></textarea>
+      </div>
+
+      <!-- Visibilidade -->
+      <div class="form-group">
+        <label class="form-label">Visibilidade</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <button
+            id="btnFree"
+            style="padding:12px;background:var(--color-brand-primary);border-radius:12px;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px"
+            aria-pressed="true"
+          >
+            <img src="icons/unlock.svg" alt="" aria-hidden="true" style="width:16px;height:16px;filter:brightness(0) invert(1)">
+            Gratuito
+          </button>
+          <button
+            id="btnPPV"
+            style="padding:12px;background:var(--color-bg-secondary);border:2px solid var(--color-border-default);border-radius:12px;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px"
+            aria-pressed="false"
+          >
+            <img src="icons/coins.svg" alt="" aria-hidden="true" style="width:16px;height:16px">
+            PPV (pago)
+          </button>
+        </div>
+      </div>
+
+      <!-- Preco PPV (oculto por padrao) -->
+      <div class="form-group" id="ppvPriceGroup" style="display:none" aria-hidden="true">
+        <label class="form-label" for="ppv-price">Preco em creditos</label>
+        <div style="position:relative">
+          <div style="position:absolute;left:14px;top:50%;transform:translateY(-50%);pointer-events:none">
+            <img src="icons/coins.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+          </div>
+          <input
+            id="ppv-price"
+            type="number"
+            class="form-input"
+            placeholder="Ex: 50"
+            min="5"
+            style="padding-left:44px"
+          >
+        </div>
+      </div>
+
+      <!-- Tipo de conteudo -->
+      <div class="form-group">
+        <label class="form-label">Tipo</label>
+        <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none" role="group" aria-label="Tipo de conteudo">
+          <button style="padding:8px 16px;border-radius:50px;background:var(--color-brand-primary);color:#fff;font-size:13px;font-weight:600;white-space:nowrap;min-height:44px" aria-pressed="true">Foto</button>
+          <button style="padding:8px 16px;border-radius:50px;background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:13px;font-weight:600;white-space:nowrap;border:1px solid var(--color-border-default);min-height:44px" aria-pressed="false">Video</button>
+          <button style="padding:8px 16px;border-radius:50px;background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:13px;font-weight:600;white-space:nowrap;border:1px solid var(--color-border-default);min-height:44px" aria-pressed="false">Album</button>
+          <button style="padding:8px 16px;border-radius:50px;background:var(--color-bg-secondary);color:var(--color-text-secondary);font-size:13px;font-weight:600;white-space:nowrap;border:1px solid var(--color-border-default);min-height:44px" aria-pressed="false">Enquete</button>
+        </div>
+      </div>
+
+      <!-- Acoes de publicacao -->
+      <div style="display:flex;gap:8px;padding-bottom:16px">
+        <button class="btn btn-primary btn-full btn-lg">
+          <img src="icons/check.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:brightness(0) invert(1)">
+          Publicar agora
+        </button>
+        <button class="btn btn-secondary" style="white-space:nowrap;min-height:52px;padding:14px 16px" aria-label="Agendar publicacao">
+          <img src="icons/calendar.svg" alt="" aria-hidden="true" style="width:18px;height:18px">
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Bottom nav (area do fa) -->
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</div>
+<script>
+  var btnFree = document.getElementById('btnFree');
+  var btnPPV  = document.getElementById('btnPPV');
+  var ppvGroup = document.getElementById('ppvPriceGroup');
+
+  function setFree() {
+    btnFree.style.background = 'var(--color-brand-primary)';
+    btnFree.style.color = '#fff';
+    btnFree.style.border = 'none';
+    btnFree.setAttribute('aria-pressed', 'true');
+    btnPPV.style.background = 'var(--color-bg-secondary)';
+    btnPPV.style.color = 'var(--color-text-primary)';
+    btnPPV.style.border = '2px solid var(--color-border-default)';
+    btnPPV.setAttribute('aria-pressed', 'false');
+    ppvGroup.style.display = 'none';
+    ppvGroup.setAttribute('aria-hidden', 'true');
+  }
+
+  function setPPV() {
+    btnPPV.style.background = 'var(--color-brand-primary)';
+    btnPPV.style.color = '#fff';
+    btnPPV.style.border = 'none';
+    btnPPV.setAttribute('aria-pressed', 'true');
+    btnFree.style.background = 'var(--color-bg-secondary)';
+    btnFree.style.color = 'var(--color-text-primary)';
+    btnFree.style.border = '2px solid var(--color-border-default)';
+    btnFree.setAttribute('aria-pressed', 'false');
+    ppvGroup.style.display = 'block';
+    ppvGroup.setAttribute('aria-hidden', 'false');
+  }
+
+  btnFree.addEventListener('click', setFree);
+  btnPPV.addEventListener('click', setPPV);
+</script>
+</body>
+</html>

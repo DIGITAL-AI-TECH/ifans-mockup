@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Notificações — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <div class="header-inner">
+      <a href="feed.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px">
+      </a>
+      <span class="header-title">Notificações</span>
+      <div class="header-actions">
+        <button class="header-action-btn" aria-label="Marcar todas como lidas"
+          style="width:auto;padding:0 8px;font-size:13px;font-weight:600;color:var(--color-brand-primary)">
+          Limpar
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+
+    <!-- HOJE -->
+    <div class="section-header">
+      <div class="section-title">Hoje</div>
+    </div>
+
+    <!-- Nova assinatura — não lida -->
+    <div class="notification-item unread">
+      <div class="notification-icon-wrap">
+        <div class="notification-icon sub">
+          <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:invert(57%) sepia(99%) saturate(390%) hue-rotate(120deg)">
+        </div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>pedro_m</strong> assinou seu plano Creator</p>
+        <div class="notification-time">há 1h</div>
+      </div>
+    </div>
+
+    <!-- Like — não lida -->
+    <div class="notification-item unread">
+      <div class="notification-icon-wrap">
+        <div class="avatar-initials avatar-sm" style="font-size:13px">C</div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>carol_santos</strong> curtiu sua foto</p>
+        <div class="notification-time">há 2h</div>
+      </div>
+      <div class="notification-thumbnail" style="background:linear-gradient(135deg,#442AC0,#FD296C)"></div>
+    </div>
+
+    <!-- Gorjeta — não lida -->
+    <div class="notification-item unread">
+      <div class="notification-icon-wrap">
+        <div class="notification-icon tip">
+          <img src="icons/gift.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:invert(72%) sepia(80%) saturate(600%) hue-rotate(5deg)">
+        </div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>julia_r</strong> te enviou uma gorjeta de <strong>50 créditos</strong></p>
+        <div class="notification-time">há 3h</div>
+      </div>
+    </div>
+
+    <!-- Comentário — não lida -->
+    <div class="notification-item unread">
+      <div class="notification-icon-wrap">
+        <div class="avatar-initials avatar-sm" style="font-size:13px;background:#3422A0">L</div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>lucas_p</strong> comentou: "Incrivel, aguardando mais!"</p>
+        <div class="notification-time">há 5h</div>
+      </div>
+      <div class="notification-thumbnail" style="background:linear-gradient(135deg,#281A80,#110B3A)"></div>
+    </div>
+
+    <!-- Novo seguidor — lida -->
+    <div class="notification-item">
+      <div class="notification-icon-wrap">
+        <div class="notification-icon comment">
+          <img src="icons/user.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:invert(26%) sepia(89%) saturate(2389%) hue-rotate(241deg)">
+        </div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>fernanda_o</strong> começou a te seguir</p>
+        <div class="notification-time">há 7h</div>
+      </div>
+    </div>
+
+    <!-- Like no Reel — lida -->
+    <div class="notification-item">
+      <div class="notification-icon-wrap">
+        <div class="avatar-initials avatar-sm" style="font-size:13px;background:#FD296C">R</div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>rafael_c</strong> curtiu seu Reel</p>
+        <div class="notification-time">há 9h</div>
+      </div>
+      <div class="notification-thumbnail" style="background:linear-gradient(135deg,#FD296C,#442AC0)"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ESTA SEMANA -->
+    <div class="section-header">
+      <div class="section-title">Esta semana</div>
+    </div>
+
+    <!-- Nova assinatura VIP — lida -->
+    <div class="notification-item">
+      <div class="notification-icon-wrap">
+        <div class="notification-icon sub">
+          <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:invert(57%) sepia(99%) saturate(390%) hue-rotate(120deg)">
+        </div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>marina_s</strong> assinou seu plano VIP</p>
+        <div class="notification-time">Ontem às 20:14</div>
+      </div>
+    </div>
+
+    <!-- Gorjeta grande — lida -->
+    <div class="notification-item">
+      <div class="notification-icon-wrap">
+        <div class="notification-icon tip">
+          <img src="icons/gift.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:invert(72%) sepia(80%) saturate(600%) hue-rotate(5deg)">
+        </div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>thiago_m</strong> te enviou uma gorjeta de <strong>100 créditos</strong></p>
+        <div class="notification-time">Seg às 15:40</div>
+      </div>
+    </div>
+
+    <!-- Comentário — lida -->
+    <div class="notification-item">
+      <div class="notification-icon-wrap">
+        <div class="avatar-initials avatar-sm" style="font-size:13px;background:#10B981">J</div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>jessica_b</strong> comentou: "Que foto linda!"</p>
+        <div class="notification-time">Dom às 11:22</div>
+      </div>
+      <div class="notification-thumbnail" style="background:linear-gradient(135deg,#1B1158,#442AC0)"></div>
+    </div>
+
+    <!-- Likes em série — lida -->
+    <div class="notification-item">
+      <div class="notification-icon-wrap">
+        <div class="avatar-initials avatar-sm" style="font-size:13px;background:#6B4FEB">F</div>
+      </div>
+      <div class="notification-content">
+        <p class="notification-text"><strong>felipe_a</strong> e outras <strong>12 pessoas</strong> curtiram sua publicação</p>
+        <div class="notification-time">Sab às 09:05</div>
+      </div>
+      <div class="notification-thumbnail" style="background:linear-gradient(135deg,#6B4FEB,#FD296C)"></div>
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+</div>
+</body>
+</html>

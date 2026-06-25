@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Clipes — ifans</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body style="margin:0;padding:0;overflow:hidden;background:#000">
+
+<div class="reels-container" id="reelsContainer">
+
+  <!-- REEL 1 — normal, curtido -->
+  <div class="reel-item">
+    <div class="reel-bg" style="background:linear-gradient(180deg,#110B3A,#0D0B1E)"></div>
+
+    <!-- Progress bar -->
+    <div class="reel-progress">
+      <div class="reel-progress-fill" style="width:35%"></div>
+    </div>
+
+    <!-- Botão fechar (apenas no primeiro reel) -->
+    <button
+      onclick="window.location='feed.html'"
+      aria-label="Fechar reels"
+      style="position:absolute;top:calc(env(safe-area-inset-top,0px) + 8px);right:12px;z-index:20;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.4);border-radius:50%;border:none;cursor:pointer"
+    >
+      <img src="icons/x.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+    </button>
+
+    <div class="reel-overlay">
+      <div class="reel-bottom">
+        <div class="reel-info">
+          <div class="reel-creator">
+            <div class="avatar-initials avatar-sm ring-creator" style="font-size:12px">A</div>
+            <span class="reel-creator-name">Ana Lima</span>
+            <button class="reel-follow-btn">Seguir</button>
+          </div>
+          <p class="reel-caption">Bastidores do ensaio de hoje ✨ Acesso completo para assinantes Creator</p>
+        </div>
+
+        <!-- Ações laterais direitas -->
+        <div class="reel-actions">
+          <button class="reel-action-btn liked" aria-label="Curtir">
+            <img src="icons/heart.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">4.2k</span>
+          </button>
+          <button class="reel-action-btn" aria-label="Comentar">
+            <img src="icons/message.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">128</span>
+          </button>
+          <button class="reel-action-btn" aria-label="Enviar gorjeta">
+            <img src="icons/gift.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">Gorjeta</span>
+          </button>
+          <button class="reel-action-btn" aria-label="Compartilhar">
+            <img src="icons/share.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">Compartilhar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REEL 2 — PPV (conteúdo bloqueado) -->
+  <div class="reel-item">
+    <div class="reel-bg" style="background:linear-gradient(180deg,#3422A0,#1B1158)"></div>
+
+    <!-- Progress bar zerado -->
+    <div class="reel-progress">
+      <div class="reel-progress-fill" style="width:0%"></div>
+    </div>
+
+    <!-- Overlay de desbloqueio PPV -->
+    <div
+      style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:10"
+      role="region"
+      aria-label="Conteúdo bloqueado"
+    >
+      <img src="icons/lock.svg" alt="" aria-hidden="true" style="width:40px;height:40px;filter:brightness(0) invert(1)">
+      <p style="color:#fff;font-size:16px;font-weight:700;text-align:center;margin:0">Conteúdo exclusivo</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:13px;text-align:center;margin:0">Assine para assistir este Reel</p>
+      <button
+        style="display:flex;align-items:center;gap:8px;padding:12px 24px;background:linear-gradient(135deg,#442AC0,#FD296C);border-radius:50px;color:#fff;font-size:15px;font-weight:700;border:none;cursor:pointer;min-height:48px"
+        aria-label="Assinar plano Creator por 25 créditos por mês"
+      >
+        <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:brightness(0) invert(1)">
+        Assinar Creator — 25 créditos/mês
+      </button>
+    </div>
+
+    <div class="reel-overlay">
+      <div class="reel-bottom">
+        <div class="reel-info">
+          <div class="reel-creator">
+            <div class="avatar-initials avatar-sm" style="font-size:12px;background:#6B4FEB">B</div>
+            <span class="reel-creator-name">Bruno Dias</span>
+            <button class="reel-follow-btn">Seguir</button>
+          </div>
+          <p class="reel-caption">Conteúdo exclusivo para assinantes Premium</p>
+        </div>
+        <div class="reel-actions">
+          <button class="reel-action-btn" aria-label="Curtir">
+            <img src="icons/heart.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">890</span>
+          </button>
+          <button class="reel-action-btn" aria-label="Comentar">
+            <img src="icons/message.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">34</span>
+          </button>
+          <button class="reel-action-btn" aria-label="Enviar gorjeta">
+            <img src="icons/gift.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">Gorjeta</span>
+          </button>
+          <button class="reel-action-btn" aria-label="Compartilhar">
+            <img src="icons/share.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">Compartilhar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REEL 3 — normal, criadora seguida -->
+  <div class="reel-item">
+    <div class="reel-bg" style="background:linear-gradient(180deg,#1B1158,#281A80)"></div>
+
+    <div class="reel-progress">
+      <div class="reel-progress-fill" style="width:60%"></div>
+    </div>
+
+    <div class="reel-overlay">
+      <div class="reel-bottom">
+        <div class="reel-info">
+          <div class="reel-creator">
+            <div class="avatar-initials avatar-sm ring-premium" style="font-size:12px;background:#FD296C">C</div>
+            <span class="reel-creator-name">Carol Santos</span>
+            <button class="reel-follow-btn">Seguindo</button>
+          </div>
+          <p class="reel-caption">Making of do novo álbum de fotos — Link na bio</p>
+        </div>
+        <div class="reel-actions">
+          <button class="reel-action-btn" aria-label="Curtir">
+            <img src="icons/heart.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">2.1k</span>
+          </button>
+          <button class="reel-action-btn" aria-label="Comentar">
+            <img src="icons/message.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">67</span>
+          </button>
+          <button class="reel-action-btn" aria-label="Enviar gorjeta">
+            <img src="icons/gift.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">Gorjeta</span>
+          </button>
+          <button class="reel-action-btn" aria-label="Compartilhar">
+            <img src="icons/share.svg" alt="" aria-hidden="true">
+            <span class="reel-action-count">Compartilhar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bottom nav flutuante translúcido -->
+<nav aria-label="Navegação principal" style="position:fixed;bottom:0;left:0;right:0;z-index:10">
+    <div class="bottom-nav-inner" style="background:rgba(13,11,30,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</body>
+</html>

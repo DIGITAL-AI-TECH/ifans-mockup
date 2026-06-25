@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Configurar Perfil — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <style>
+    .setup-progress-bar {
+      height: 4px;
+      background: var(--color-bg-tertiary);
+      border-radius: 2px;
+      overflow: hidden;
+      margin: 0 24px;
+    }
+    .setup-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #442AC0, #FD296C);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+    .cover-upload {
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(135deg, #281A80, #110B3A);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px dashed var(--color-border-default);
+    }
+    .cover-upload-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .avatar-upload-area {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--color-bg-tertiary);
+      border: 3px dashed var(--color-border-default);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .avatar-upload-plus {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--color-brand-primary);
+      border: 2px solid var(--color-bg-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .category-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1.5px solid var(--color-border-default);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      min-height: 44px;
+      transition: all 0.15s;
+    }
+    .category-chip.selected {
+      background: rgba(107,79,235,0.15);
+      border-color: var(--color-brand-primary);
+      color: var(--color-brand-primary);
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-brand">
+        <img src="logos/logo-primary.svg" alt="ifans" class="header-logo">
+      </a>
+      <span class="header-title" style="font-size:14px;color:var(--color-text-tertiary)">Configurar Perfil de Criador</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <main class="page-content-no-nav">
+
+    <!-- Barra de progresso -->
+    <div style="padding:16px 0 8px">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:0 24px 10px">
+        <span style="font-size:12px;color:var(--color-text-tertiary);font-weight:600">Passo 2 de 4</span>
+        <span style="font-size:12px;color:var(--color-brand-primary);font-weight:600">50%</span>
+      </div>
+      <div class="setup-progress-bar">
+        <div class="setup-progress-fill" style="width:50%"></div>
+      </div>
+    </div>
+
+    <div style="padding:24px">
+
+      <!-- Titulo do passo -->
+      <div style="margin-bottom:24px">
+        <h1 style="font-size:22px;font-weight:800;margin-bottom:6px">Personalize seu perfil</h1>
+        <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.6">
+          Uma boa apresentacao atrai mais assinantes. Capriche na foto e na bio!
+        </p>
+      </div>
+
+      <!-- Foto de capa -->
+      <div class="form-group">
+        <div class="form-label">Foto de capa</div>
+        <div class="cover-upload" role="button" tabindex="0" aria-label="Fazer upload da foto de capa">
+          <div class="cover-upload-label">
+            <img src="icons/camera.svg" alt="" aria-hidden="true" style="width:28px;height:28px;filter:brightness(0) invert(0.6)">
+            <span>Toque para adicionar capa</span>
+            <span style="font-size:11px;opacity:0.7">JPG, PNG — max 10 MB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Avatar + nome de exibicao -->
+      <div class="form-group">
+        <div class="form-label">Foto de perfil</div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <div class="avatar-upload-area" role="button" tabindex="0" aria-label="Fazer upload do avatar">
+            <img src="icons/user.svg" alt="" aria-hidden="true" style="width:28px;height:28px;opacity:0.3">
+            <div class="avatar-upload-plus">
+              <img src="icons/plus.svg" alt="" aria-hidden="true" style="width:12px;height:12px;filter:brightness(0) invert(1)">
+            </div>
+          </div>
+          <div style="flex:1">
+            <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.5">
+              Escolha uma foto clara do rosto ou logo da sua marca. Formatos: JPG, PNG.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nome de exibicao -->
+      <div class="form-group">
+        <label class="form-label" for="display-name">Nome de exibicao</label>
+        <input type="text" id="display-name" class="form-input" placeholder="Como voce quer ser chamado(a)">
+      </div>
+
+      <!-- Bio -->
+      <div class="form-group">
+        <label class="form-label" for="creator-bio">Bio</label>
+        <textarea
+          id="creator-bio"
+          class="form-input form-textarea"
+          placeholder="Conte um pouco sobre voce e seu conteudo..."
+          rows="4"
+          style="min-height:100px"
+        ></textarea>
+        <div style="font-size:11px;color:var(--color-text-tertiary);text-align:right;margin-top:4px">0 / 200</div>
+      </div>
+
+      <!-- Categoria de conteudo -->
+      <div class="form-group">
+        <div class="form-label">Categoria de conteudo</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <button class="category-chip selected" aria-pressed="true">Arte</button>
+          <button class="category-chip" aria-pressed="false">Musica</button>
+          <button class="category-chip" aria-pressed="false">Fitness</button>
+          <button class="category-chip" aria-pressed="false">Culinaria</button>
+          <button class="category-chip" aria-pressed="false">Games</button>
+          <button class="category-chip" aria-pressed="false">Educacao</button>
+          <button class="category-chip" aria-pressed="false">Moda</button>
+          <button class="category-chip" aria-pressed="false">Fotografia</button>
+          <button class="category-chip" aria-pressed="false">Humor</button>
+          <button class="category-chip" aria-pressed="false">Lifestyle</button>
+          <button class="category-chip" aria-pressed="false">Tecnologia</button>
+          <button class="category-chip" aria-pressed="false">Outro</button>
+        </div>
+      </div>
+
+      <!-- Link externo (opcional) -->
+      <div class="form-group">
+        <label class="form-label" for="external-link">Link externo <span style="font-weight:400;color:var(--color-text-tertiary)">(opcional)</span></label>
+        <input type="url" id="external-link" class="form-input" placeholder="https://seusite.com">
+      </div>
+
+      <!-- Botoes de navegacao -->
+      <div style="display:flex;gap:10px;margin-top:8px">
+        <button class="btn btn-secondary" style="flex:1" onclick="history.back()">
+          Voltar
+        </button>
+        <button class="btn btn-primary" style="flex:2">
+          Proximo
+          <img src="icons/chevron-right.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:brightness(0) invert(1)">
+        </button>
+      </div>
+
+      <!-- Indicador de passos -->
+      <div style="display:flex;justify-content:center;gap:8px;margin-top:24px">
+        <div style="width:8px;height:8px;border-radius:50%;background:var(--color-bg-tertiary)"></div>
+        <div style="width:20px;height:8px;border-radius:4px;background:var(--color-brand-primary)"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:var(--color-bg-tertiary)"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:var(--color-bg-tertiary)"></div>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+</body>
+</html>

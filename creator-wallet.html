@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Carteira — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+</head>
+<body>
+<div class="creator-page">
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="creator-dashboard.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+      </a>
+      <span class="header-title">Carteira do Criador</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <nav class="creator-top-nav" role="navigation">
+    <a href="creator-dashboard.html" class="creator-top-nav-item"><img src="icons/bar-chart.svg" alt="" aria-hidden="true"> Dashboard</a>
+    <a href="creator-new-post.html" class="creator-top-nav-item"><img src="icons/camera.svg" alt="" aria-hidden="true"> Novo Post</a>
+    <a href="creator-analytics.html" class="creator-top-nav-item"><img src="icons/bar-chart.svg" alt="" aria-hidden="true"> Analytics</a>
+    <a href="creator-subscribers.html" class="creator-top-nav-item"><img src="icons/crown.svg" alt="" aria-hidden="true"> Assinantes</a>
+    <a href="creator-tools.html" class="creator-top-nav-item"><img src="icons/settings.svg" alt="" aria-hidden="true"> Ferramentas</a>
+    <a href="creator-wallet.html" class="creator-top-nav-item ativo"><img src="icons/coins.svg" alt="" aria-hidden="true"> Carteira</a>
+    <a href="creator-schedule.html" class="creator-top-nav-item"><img src="icons/calendar.svg" alt="" aria-hidden="true"> Agenda</a>
+    <a href="creator-broadcast.html" class="creator-top-nav-item"><img src="icons/send.svg" alt="" aria-hidden="true"> Broadcast</a>
+  </nav>
+
+  <main class="creator-page-content">
+
+    <!-- Saldo disponível -->
+    <div class="wallet-balance-card" style="margin:16px;border-radius:20px">
+      <div class="wallet-balance-label">
+        <img src="icons/coins.svg" alt="" aria-hidden="true">
+        Saldo disponível para saque
+      </div>
+      <div class="wallet-balance-amount">R$ 1.460,00</div>
+      <div class="wallet-balance-sub">Atualizado agora · Taxa plataforma 15%</div>
+      <div class="wallet-actions" style="margin-top:20px">
+        <button class="wallet-action-btn" style="background:rgba(255,255,255,0.25);font-weight:700;font-size:14px">
+          <img src="icons/coins.svg" alt="" aria-hidden="true">
+          Solicitar Saque
+        </button>
+        <a href="creator-pix-setup.html" class="wallet-action-btn">
+          <img src="icons/settings.svg" alt="" aria-hidden="true">
+          Config. PIX
+        </a>
+      </div>
+    </div>
+
+    <!-- Status PIX -->
+    <div class="panel">
+      <div class="settings-item">
+        <div class="settings-item-icon" style="background:#10B981">
+          <img src="icons/check.svg" alt="" aria-hidden="true">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:14px;font-weight:600">PIX configurado</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">••• ••• 321-82 — CPF</div>
+        </div>
+        <a href="creator-pix-setup.html" style="font-size:13px;color:var(--color-brand-primary);font-weight:600;padding:0 4px;min-height:44px;display:flex;align-items:center">Editar</a>
+      </div>
+    </div>
+
+    <!-- Resumo do mês -->
+    <div class="section-header">
+      <span class="section-title">Resumo — Jun 2026</span>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-primary">
+          <img src="icons/coins.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">R$ 2.840</div>
+        <div class="kpi-label">Receita bruta</div>
+        <div class="kpi-trend">+18% vs mai</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-secondary">
+          <img src="icons/zap.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">R$ 1.460</div>
+        <div class="kpi-label">Disponível</div>
+        <div class="kpi-trend">Após taxa 15%</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-success">
+          <img src="icons/check.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">R$ 980</div>
+        <div class="kpi-label">Já sacado</div>
+        <div class="kpi-trend">2 saques</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-icon kpi-icon-gold">
+          <img src="icons/gift.svg" alt="" aria-hidden="true">
+        </div>
+        <div class="kpi-value">R$ 320</div>
+        <div class="kpi-label">Gorjetas</div>
+        <div class="kpi-trend">34 recebidas</div>
+      </div>
+    </div>
+
+    <!-- Histórico de saques -->
+    <div class="section-header" style="margin-top:8px">
+      <span class="section-title">Histórico de saques</span>
+    </div>
+
+    <div class="panel" style="overflow:hidden">
+
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/check.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:invert(58%) sepia(60%) saturate(500%) hue-rotate(120deg)">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:14px;font-weight:600">R$ 980,00</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">10 jun 2026 — PIX CPF</div>
+        </div>
+        <span style="font-size:12px;font-weight:600;color:#10B981;padding:4px 10px;background:rgba(16,185,129,0.1);border-radius:50px">Pago</span>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--color-border-subtle)">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/check.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:invert(58%) sepia(60%) saturate(500%) hue-rotate(120deg)">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:14px;font-weight:600">R$ 540,00</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">25 mai 2026 — PIX CPF</div>
+        </div>
+        <span style="font-size:12px;font-weight:600;color:#10B981;padding:4px 10px;background:rgba(16,185,129,0.1);border-radius:50px">Pago</span>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px;padding:14px 16px">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(245,158,11,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:invert(72%) sepia(80%) saturate(600%) hue-rotate(10deg) brightness(1.1)">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:14px;font-weight:600">R$ 1.460,00</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary)">Solicitado agora</div>
+        </div>
+        <span style="font-size:12px;font-weight:600;color:#F59E0B;padding:4px 10px;background:rgba(245,158,11,0.1);border-radius:50px">Pendente</span>
+      </div>
+
+    </div>
+
+    <!-- Nota de prazo -->
+    <div style="margin:0 16px 32px;padding:14px 16px;background:rgba(107,79,235,0.08);border-radius:12px;border:1px solid rgba(107,79,235,0.15)">
+      <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6">
+        Saques processados em até <strong style="color:var(--color-text-primary)">2 dias úteis</strong> via PIX. Valor mínimo: <strong style="color:var(--color-text-primary)">R$ 50,00</strong>.
+      </div>
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>

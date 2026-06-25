@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Broadcast — ifans Creator</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layouts.css">
+  <style>
+    .audience-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1.5px solid var(--color-border-default);
+      color: var(--color-text-secondary);
+      cursor: pointer;
+      min-height: 44px;
+      transition: all 0.15s;
+    }
+    .audience-chip.selected {
+      background: var(--color-brand-primary);
+      border-color: var(--color-brand-primary);
+      color: #fff;
+    }
+    .broadcast-preview {
+      background: var(--color-bg-tertiary);
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid var(--color-border-subtle);
+    }
+    .broadcast-preview-bubble {
+      background: linear-gradient(135deg, #442AC0, #6B4FEB);
+      border-radius: 14px 14px 4px 14px;
+      padding: 12px 14px;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.5;
+      max-width: 85%;
+    }
+    .history-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--color-border-subtle);
+    }
+  </style>
+</head>
+<body>
+<div class="creator-page">
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="creator-dashboard.html" class="header-back-btn" aria-label="Voltar">
+        <img src="icons/chevron-left.svg" alt="" aria-hidden="true" style="width:20px;height:20px;filter:brightness(0) invert(1)">
+      </a>
+      <span class="header-title">Broadcast</span>
+      <div style="width:44px"></div>
+    </div>
+  </header>
+
+  <nav class="creator-top-nav" role="navigation">
+    <a href="creator-dashboard.html" class="creator-top-nav-item"><img src="icons/bar-chart.svg" alt="" aria-hidden="true"> Dashboard</a>
+    <a href="creator-new-post.html" class="creator-top-nav-item"><img src="icons/camera.svg" alt="" aria-hidden="true"> Novo Post</a>
+    <a href="creator-analytics.html" class="creator-top-nav-item"><img src="icons/bar-chart.svg" alt="" aria-hidden="true"> Analytics</a>
+    <a href="creator-subscribers.html" class="creator-top-nav-item"><img src="icons/crown.svg" alt="" aria-hidden="true"> Assinantes</a>
+    <a href="creator-tools.html" class="creator-top-nav-item"><img src="icons/settings.svg" alt="" aria-hidden="true"> Ferramentas</a>
+    <a href="creator-wallet.html" class="creator-top-nav-item"><img src="icons/coins.svg" alt="" aria-hidden="true"> Carteira</a>
+    <a href="creator-schedule.html" class="creator-top-nav-item"><img src="icons/calendar.svg" alt="" aria-hidden="true"> Agenda</a>
+    <a href="creator-broadcast.html" class="creator-top-nav-item ativo"><img src="icons/send.svg" alt="" aria-hidden="true"> Broadcast</a>
+  </nav>
+
+  <main class="creator-page-content">
+
+    <div style="padding:16px">
+
+      <!-- Seletor de audiência -->
+      <div class="form-group">
+        <div class="form-label">Para quem enviar</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <button class="audience-chip selected" aria-pressed="true">
+            <img src="icons/user.svg" alt="" aria-hidden="true" style="width:14px;height:14px;filter:brightness(0) invert(1)">
+            Todos (247)
+          </button>
+          <button class="audience-chip" aria-pressed="false">
+            <img src="icons/crown.svg" alt="" aria-hidden="true" style="width:14px;height:14px">
+            Creator (180)
+          </button>
+          <button class="audience-chip" aria-pressed="false">
+            <img src="icons/zap.svg" alt="" aria-hidden="true" style="width:14px;height:14px">
+            VIP (15)
+          </button>
+        </div>
+      </div>
+
+      <!-- Textarea da mensagem -->
+      <div class="form-group">
+        <div class="form-label">Mensagem</div>
+        <textarea
+          class="form-input form-textarea"
+          placeholder="Escreva sua mensagem para os assinantes..."
+          rows="5"
+          style="min-height:120px;line-height:1.6"
+        >Oi gente! Postei um conteúdo novo exclusivo pra voces hoje a noite. Nao percam, vai ser incrivel!</textarea>
+      </div>
+
+      <!-- Toggle incluir mídia -->
+      <div class="form-group">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-top:1px solid var(--color-border-subtle);border-bottom:1px solid var(--color-border-subtle)">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(107,79,235,0.15);display:flex;align-items:center;justify-content:center">
+              <img src="icons/camera.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.7">
+            </div>
+            <div>
+              <div style="font-size:14px;font-weight:600">Incluir mídia</div>
+              <div style="font-size:12px;color:var(--color-text-tertiary)">Foto ou vídeo junto à mensagem</div>
+            </div>
+          </div>
+          <div class="settings-toggle" role="switch" aria-checked="false" aria-label="Incluir mídia"></div>
+        </div>
+      </div>
+
+      <!-- Preview -->
+      <div class="form-group" style="margin-top:8px">
+        <div class="form-label">Preview da mensagem</div>
+        <div class="broadcast-preview">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+            <div class="avatar-initials avatar-sm" style="font-size:13px;background:linear-gradient(135deg,#442AC0,#FD296C)">A</div>
+            <div>
+              <div style="font-size:13px;font-weight:600">Ana Artista</div>
+              <div style="font-size:11px;color:var(--color-text-tertiary)">@ana_art</div>
+            </div>
+          </div>
+          <div class="broadcast-preview-bubble">
+            Oi gente! Postei um conteudo novo exclusivo pra voces hoje a noite. Nao percam, vai ser incrivel!
+          </div>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:8px;text-align:right">agora · 247 destinatarios</div>
+        </div>
+      </div>
+
+      <!-- Botão enviar -->
+      <button class="btn btn-primary btn-full btn-lg" style="margin-top:4px;margin-bottom:8px">
+        <img src="icons/send.svg" alt="" aria-hidden="true" style="width:18px;height:18px;filter:brightness(0) invert(1)">
+        Enviar para 247 assinantes
+      </button>
+
+      <p style="font-size:12px;color:var(--color-text-tertiary);text-align:center;margin-bottom:24px">
+        Assinantes receberao notificacao e mensagem direta
+      </p>
+
+    </div>
+
+    <!-- Histórico de broadcasts -->
+    <div class="divider"></div>
+    <div class="section-header">
+      <span class="section-title">Broadcasts anteriores</span>
+    </div>
+
+    <div class="panel" style="overflow:hidden">
+
+      <div class="history-row">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(107,79,235,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/send.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.7">
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">"Novo ensaio disponivel hoje!"</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">20 jun 2026 · 247 assinantes</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:13px;font-weight:700;color:#10B981">89%</div>
+          <div style="font-size:10px;color:var(--color-text-tertiary)">abertura</div>
+        </div>
+      </div>
+
+      <div class="history-row">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(107,79,235,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/send.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.7">
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">"Promocao especial de aniversario!"</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">10 jun 2026 · 231 assinantes</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:13px;font-weight:700;color:#10B981">94%</div>
+          <div style="font-size:10px;color:var(--color-text-tertiary)">abertura</div>
+        </div>
+      </div>
+
+      <div class="history-row" style="border-bottom:none">
+        <div style="width:40px;height:40px;border-radius:10px;background:rgba(107,79,235,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <img src="icons/send.svg" alt="" aria-hidden="true" style="width:18px;height:18px;opacity:0.7">
+        </div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">"Live amanha as 20h, avisem!"</div>
+          <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:2px">02 jun 2026 · 218 assinantes</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <div style="font-size:13px;font-weight:700;color:#F59E0B">76%</div>
+          <div style="font-size:10px;color:var(--color-text-tertiary)">abertura</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="height:32px"></div>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="bottom-nav-inner">
+      <a href="feed.html" class="bottom-nav-tab" aria-label="Feed">
+        <img src="icons/home.svg" alt="" aria-hidden="true">
+      </a>
+      <a href="discover.html" class="bottom-nav-tab" aria-label="Descoberta">
+        <img src="icons/eye.svg" alt="" aria-hidden="true">
+      </a>
+      <button class="bottom-nav-create" aria-label="Criar conteúdo">
+        <img src="icons/plus.svg" alt="" aria-hidden="true">
+      </button>
+      <a href="profile.html" class="bottom-nav-tab" aria-label="Perfil">
+        <img src="icons/user.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+</div>
+</body>
+</html>
